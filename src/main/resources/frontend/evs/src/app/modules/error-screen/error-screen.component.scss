@@ -1,0 +1,53 @@
+html {
+  background-color: #535353;
+}
+
+.mid_screen_container_error {
+  background:url("../../../assets/login_background.png") no-repeat center;
+  color: antiquewhite;
+}
+
+.container_login_background {
+  min-height: 100vh;
+  color: antiquewhite;
+}
+
+.container_error_title {
+  text-align: center;
+}
+
+.error_primary_title {
+  font-size: 150px;
+}
+
+.error_secondary_title {
+  font-size: 30px;
+  margin-top: 60px;
+}
+
+.error_tertiary_title {
+  font-size: 12px;
+}
+
+.container_error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-color: antiquewhite;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container_error_message {
+  background: rgba(black, 0.5);
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+

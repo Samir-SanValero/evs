@@ -1,0 +1,11 @@
+<div class="ply-menu">
+	<button #videoFirstFrame [ngClass]="['btn-ply-ctl', 'selectable']" (click)="goToFirstFrame()">&lt;</button>
+	<button #videoPreviousFrame [ngClass]="['btn-ply-ctl', 'selectable']" (click)="previousFrame()">&lt;&lt;</button>
+	<button #videoPlayStop [ngClass]="['btn-ply-ctl', 'selectable']" (click)="play()">&#x23F5;</button>
+	<button #videoNextFrame [ngClass]="['btn-ply-ctl', 'selectable']" (click)="nextFrame()">&gt;&gt;</button>
+	<button #videoLastFrame [ngClass]="['btn-ply-ctl', 'selectable']" (click)="goToLastFrame()">&gt;</button>
+	<div [ngClass]="'cstm-sldr-fps'">
+        <p>Play speed (FPS)</p>
+        <ng5-slider [ngClass]="'sldr-fps'" [(value)]="frameRate" [options]="sliderFrameRateOptions" (userChange)="sliderFrameRateMove($event)"></ng5-slider>
+    </div>
+</div>

@@ -1,0 +1,136 @@
+<div [ngClass]="'main_menu_header_container'">
+  <div [routerLink]="'/'" [ngClass]="'main_menu_inner_header_container'">
+    <div [ngClass]="'main_menu_primary_title_container'">
+      <span [ngClass]="'main_menu_primary_title secondary_color'">EVS</span>
+    </div>
+
+    <div [ngClass]="'main_menu_secondary_title'">
+      <span [ngClass]="'secondary_color'">E</span><span>mbryo</span>
+      <span [ngClass]="'secondary_color'">V</span><span>isual</span>
+      <span [ngClass]="'secondary_color'">S</span><span>tudio</span>
+    </div>
+  </div>
+
+  <div [ngClass]="'container_carousel'" *ngIf="router.url !== '/'">
+    <div id="carouselHeader" [ngClass]="'carousel slide'" data-interval="false" data-ride="carousel">
+      <div [ngClass]="'carousel-inner'">
+        <div [ngClass]="'carousel-item active'">
+          <div [ngClass]="'container_option_carousel'">
+            <div [ngClass]="'container_patients_menu_button'">
+              <button [routerLink]="'/patient'" [ngClass]="'container_option main_menu_button_patients glow-on-hover slide'" routerLinkActive="button_link_active">PATIENTS</button>
+            </div>
+
+            <div [ngClass]="'container_embryo_viewer_menu_button'">
+              <button [routerLink]="'/viewer'" [ngClass]="'container_option main_menu_button_embryo_viewer glow-on-hover slide'" routerLinkActive="button_link_active">EMBRYO VIEWER</button>
+            </div>
+
+            <div [ngClass]="'container_embryo_selection_menu_button'">
+              <button [routerLink]="'/embryo-selection'" [ngClass]="'container_option main_menu_button_embryo_selection glow-on-hover slide'" routerLinkActive="button_link_active">EMBRYO SELECTION</button>
+<!--              <button [ngClass]="'container_option_disable main_menu_button_embryo_selection glow-on-hover slide'">EMBRYO SELECTION</button>-->
+            </div>
+
+            <div [ngClass]="'container_reports_menu_button'">
+<!--              <button [routerLink]="'/reports'" [ngClass]="'container_option main_menu_button_reports glow-on-hover slide'">REPORTS</button>-->
+              <button [ngClass]="'container_option_disable main_menu_button_reports glow-on-hover slide'" routerLinkActive="button_link_active">REPORTS</button>
+            </div>
+
+            <div [ngClass]="'container_video_menu_button'">
+              <button [routerLink]="'/video'" [ngClass]="'container_option main_menu_button_video glow-on-hover slide'" routerLinkActive="button_link_active">VIDEO</button>
+<!--              <button [ngClass]="'container_option_disable main_menu_button_video glow-on-hover slide'">VIDEO</button>-->
+            </div>
+          </div>
+        </div>
+        <div [ngClass]="'carousel-item'">
+          <div [ngClass]="'container_option_carousel'">
+            <div [ngClass]="'container_notifications_menu_button'">
+              <button [routerLink]="'/notifications'" [ngClass]="'container_option main_menu_button_notifications glow-on-hover slide'" routerLinkActive="button_link_active">NOTIFICATIONS</button>
+<!--              <button [ngClass]="'container_option_disable main_menu_button_notifications glow-on-hover slide'">NOTIFICATIONS</button>-->
+            </div>
+            <div [ngClass]="'container_settings_menu_button'">
+              <button [routerLink]="'/settings'" [ngClass]="'container_option main_menu_button_settings glow-on-hover slide'" routerLinkActive="button_link_active">SETTINGS</button>
+            </div>
+            <div [ngClass]="'container_support_menu_button'">
+              <button [routerLink]="'/support'" [ngClass]="'container_option main_menu_button_support glow-on-hover slide'" routerLinkActive="button_link_active">SUPPORT</button>
+<!--              <button [ngClass]="'container_option_disable main_menu_button_support glow-on-hover slide'">SUPPORT</button>-->
+            </div>
+            <div [ngClass]="'main_menu_button_empty'">
+              <button [ngClass]="'container_option main_menu_button_empty glow-on-hover slide'"></button>
+            </div>
+            <div [ngClass]="'main_menu_button_empty'">
+              <button  [ngClass]="'container_option main_menu_button_empty glow-on-hover slide'"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a [ngClass]="'carousel-control-prev'" href="#carouselHeader" role="button" data-slide="prev">
+        <span [ngClass]="'carousel-control-prev-icon'" aria-hidden="true"></span>
+        <span [ngClass]="'sr-only'">Previous</span>
+      </a>
+
+      <a [ngClass]="'carousel-control-next'" href="#carouselHeader" role="button" data-slide="next">
+        <span [ngClass]="'carousel-control-next-icon'" aria-hidden="true"></span>
+        <span [ngClass]="'sr-only'">Next</span>
+      </a>
+
+    </div>
+  </div>
+
+  <div [ngClass]="'caj-notif'">
+  </div>
+
+  <!-- PATIENT SELECTOR -->
+  <div [ngClass]="'caj-pat-sel'" *ngIf="(router.url !== '/') && (router.url !== '/settings')">
+
+    <!-- SELECTED PATIENT -->
+      <!-- SELECTED PATIENT IMAGE -->
+      <div [ngClass]="'caj-pat-sel-img'" *ngIf="selectedPatient.patientData.photo !== undefined">
+          <img [src]="'data:image/jpg;base64,' + selectedPatient.patientData.photo" [ngClass]="'pat-sel-img'" [alt]="'No img'">
+      </div>
+      <div [ngClass]="'caj-pat-sel-img-no-img'" *ngIf="selectedPatient.patientData.photo == undefined">
+      </div>
+
+
+      <!-- SELECTED PATIENT IMAGE -->
+
+      <!-- SELECTED PATIENT DATA -->
+      <div [ngClass]="'caj-pat-sel-data'">
+        <div [ngClass]="'pat-sel-data'">
+          <div [ngClass]="'pat-sel-data-fld'">
+            <div [ngClass]="'pat-sel-data-ttl'">ID: </div>
+            <div [ngClass]="'pat-sel-data-val'">{{selectedPatient.patientData.id}}</div>
+          </div>
+          <div [ngClass]="'pat-select-data-fld'">
+            <div [ngClass]="'pat-sel-data-ttl'">Name: </div>
+            <div [ngClass]="'pat-sel-data-val blur2'">{{selectedPatient.patientData.name}}</div>
+          </div>
+          <div [ngClass]="'pat-sel-data-fld'">
+            <div [ngClass]="'pat-sel-data-ttl'">Partner ID: </div>
+            <div [ngClass]="'pat-sel-data-val'">{{selectedPatient.partnerData.id}}</div>
+          </div>
+        </div>
+      </div>
+      <!-- SELECTED PATIENT DATA -->
+    <!-- SELECTED PATIENT -->
+
+    <!-- SELECTABLE PATIENT LIST -->
+<!--        <div  *ngFor="let currentPatient of currentPatients">-->
+<!--          <div [ngClass]="'pat-select-data'">-->
+<!--            <div [ngClass]="'pat-select-data-fld'">-->
+<!--              <div [ngClass]="'pat-select-data-ttl'">ID: </div>-->
+<!--              <div [ngClass]="'pat-select-data-val'">{{currentPatient.patientData.id}}</div>-->
+<!--            </div>-->
+<!--            <div [ngClass]="'pat-select-data-fld'">-->
+<!--              <div [ngClass]="'pat-select-data-ttl'">Name: </div>-->
+<!--              <div [ngClass]="'pat-select-data-val'">{{currentPatient.patientData.name}}</div>-->
+<!--            </div>-->
+<!--            <div [ngClass]="'pat-select-data-fld'">-->
+<!--              <div [ngClass]="'pat-select-data-ttl'">Partner ID: </div>-->
+<!--              <div [ngClass]="'pat-select-data-val'">{{currentPatient.partnerData.id}}</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      <!-- SELECTABLE PATIENT LIST -->
+    <!-- PATIENT SELECTOR -->
+
+  </div>
+</div>

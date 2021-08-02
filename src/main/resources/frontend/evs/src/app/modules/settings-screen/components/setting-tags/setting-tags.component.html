@@ -1,0 +1,59 @@
+<div [ngClass]="'setting-data'">
+  <div [ngClass]="'setting-right-pane'">
+
+    <div [ngClass]="'setting-list'">
+      <div [ngClass]="'setting-list-item selectable'" *ngFor="let tag of tags" (click)="selectTag(tag)">
+        <div [ngClass]="'setting-list-item-value'">{{tag.acronym}}</div>
+        <div [ngClass]="'setting-list-item-value'">{{tag.name}}</div>
+      </div>
+    </div>
+
+    <div [ngClass]="'setting-buttons'">
+      <button [ngClass]="'setting-button-remove selectable'" (click)="removeTag()">
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button [ngClass]="'setting-button-add selectable'" (click)="addTag()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+  <div [ngClass]="'setting-left-pane'" *ngIf="editingTag !== undefined">
+
+    <div [ngClass]="'setting-list'">
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Acronym</label>
+        </div>
+        <input [ngClass]="'pane-item-input-value selectable'" type="text" [(ngModel)]="editingTag.acronym" [value]="editingTag.acronym">
+      </div>
+
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Name</label>
+        </div>
+        <input [ngClass]="'pane-item-input-value selectable'" type="text" [(ngModel)]="editingTag.name" [value]="editingTag.name">
+      </div>
+
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Description</label>
+        </div>
+        <input [ngClass]="'pane-item-input-text selectable'" type="text" [(ngModel)]="editingTag.description" [value]="editingTag.description">
+      </div>
+
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Comment</label>
+        </div>
+        <input [ngClass]="'pane-item-input-text selectable'" type="text" [(ngModel)]="editingTag.comment" [value]="editingTag.comment">
+      </div>
+    </div>
+
+    <div [ngClass]="'setting-buttons'">
+      <button [ngClass]="'setting-button-save selectable'" (click)="saveTag()"></button>
+    </div>
+
+  </div>
+</div>

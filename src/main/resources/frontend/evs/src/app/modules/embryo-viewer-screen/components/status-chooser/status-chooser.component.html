@@ -1,0 +1,7 @@
+<div [ngClass]="'container-embryo-status-list'">
+  <div [ngClass]="'status selectable'" (click)='changeStatus(status)' *ngFor="let status of statuses" [ngStyle]="{'background-color': status.color}">
+    <div [ngClass]="'tooltip-text'">
+      <p>{{status.description}}</p>
+    </div>
+  </div>
+</div>

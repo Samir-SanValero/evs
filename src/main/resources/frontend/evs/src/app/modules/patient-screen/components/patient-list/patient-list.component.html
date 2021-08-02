@@ -1,0 +1,55 @@
+<div [ngClass]="'container-patient-list'">
+
+  <div [ngClass]="'patient-list-title'">
+    <div [ngClass]="{'patient-list-title-option selectable': historicPatientListSelected === false,
+                     'patient-list-title-option-deactivated selectable': historicPatientListSelected === true}"
+         (click)="deactivateHistoric()">PATIENTS</div>
+    <div [ngClass]="{'patient-list-title-option selectable': historicPatientListSelected === true,
+                     'patient-list-title-option-deactivated selectable': historicPatientListSelected === false}"
+         (click)="activateHistoric()">HISTORY</div>
+  </div>
+
+  <div [ngClass]="'patient-list'">
+    <div [ngClass]="'patient-list-element selectable'" *ngFor="let patient of viewPatients" (click)="changeSelectedPatient(patient.patientData.id)">
+      <div [ngClass]="'patient-list-element-first-column'">
+        <div [ngClass]="'patient-list-element-dish'">
+          DISH:&nbsp;{{patient.patientData.dish}}
+        </div>
+        <div [ngClass]="'patient-list-element-photo-container'" *ngIf="patient.patientData.photo !== undefined">
+          <img [ngClass]="'patient-list-element-photo blur'" [alt]="'No image'" [src]="'data:image/jpg;base64,' + patient.patientData.photo">
+        </div>
+        <div [ngClass]="'patient-list-element-photo-container-no-image'" *ngIf="patient.patientData.photo == undefined">
+        </div>
+      </div>
+
+      <div [ngClass]="'patient-list-element-second-column'">
+        <div [ngClass]="'patient-list-element-generic'">
+          <div [ngClass]="'patient-list-element-generic-title'">
+            <span [ngClass]="'text_bold'">PATIENT ID:</span>
+          </div>
+          <div [ngClass]="'patient-list-element-generic-value'">
+            <span>{{patient.patientData.id}}</span>
+          </div>
+        </div>
+
+        <div [ngClass]="'patient-list-element-generic'">
+          <div [ngClass]="'patient-list-element-generic-title'">
+            <span [ngClass]="'text_bold'">NAME:</span>
+          </div>
+          <div [ngClass]="'patient-list-element-generic-value'">
+            <span [ngClass]="'blur'">{{patient.patientData.name}}</span>
+          </div>
+        </div>
+
+        <div [ngClass]="'patient-list-element-generic'">
+          <div [ngClass]="'patient-list-element-generic-title'">
+            <span [ngClass]="'text_bold'">PARTNER ID:</span>
+          </div>
+          <div [ngClass]="'patient-list-element-generic-value'">
+            <span>{{patient.partnerData.id}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

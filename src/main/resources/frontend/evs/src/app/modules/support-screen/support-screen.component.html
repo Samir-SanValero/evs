@@ -1,0 +1,98 @@
+<app-header></app-header>
+
+<div [ngClass]="['flex']">
+    <div [ngClass]="['ltr-pnl', 'flex']">
+		<div [ngClass]="['cntc-us', 'flex']">
+		    <h4>CONTACT US</h4>
+		    <div [ngClass]="['flex']">
+		        <img [ngClass]="['flex', 'cntc-img']" src="assets/support_24_7.png" alt="24x7" width="50px" height="50px"/>
+		        <h5 [ngClass]="['cntc-sub-tit','flex']">24/7</h5><br>
+		        <p [ngClass]="['cntc-sub-tit','flex']">astec-japan@astec-bio.com</p>
+		    </div>
+		    
+		    <div [ngClass]="['flex']">
+		        <img [ngClass]="['flex', 'cntc-img']" src="assets/ubication.png" alt="ubication" width="50px" height="50px"/>
+		        <h5 [ngClass]="['cntc-sub-tit','flex']">ADDRESS</h5><br>
+		        <p [ngClass]="['cntc-sub-tit','flex']">4615 Minamizat, Shime, Kasuya, Fukuoka, Japan 811-2207</p>
+		    </div>
+		    
+		    <div [ngClass]="['flex']">
+		        <img [ngClass]="['flex', 'cntc-img']" src="assets/phone.png" alt="phone" width="50px" height="50px"/>
+		        <h5 [ngClass]="['cntc-sub-tit','flex']">TEL</h5><br>
+		        <p [ngClass]="['cntc-sub-tit','flex']">+81-92-935-5666</p>
+		    </div>
+		</div>
+		<div [ngClass]="['cntc-us', 'flex']">
+		<a target="_blank" href="https://www.facebook.com/">Facebook</a>
+		<a target="_blank" href="https://www.instagram.com/?hl=es">Instagram</a>
+		<a target="_blank" href="https://es.linkedin.com/">Linkedin</a>
+		<a target="_blank" href="https://www.google.es/">Email</a>
+		
+		</div>
+	</div>
+	
+	<div [ngClass]="['mdl-pnl', 'flex']">
+	   <mat-expansion-panel *ngFor="let item of faqs" hideToggle>
+          <mat-expansion-panel-header (click)="click(item.id)">
+            <mat-panel-title>
+              {{item.title}}
+              <mat-icon style="float:right;">{{item.arrow  ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</mat-icon>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>{{item.text}}</p>
+        </mat-expansion-panel>
+	</div>
+	
+	<div [ngClass]="['mdl-pnl', 'flex']">
+		<form f="ngForm" [formGroup]="contactForm" (ngSubmit)="onContactSubmit($event)">
+            <div>
+				<div *ngIf="contactFormSubmited && name.errors != null && name.errors.required">
+				   <p [ngClass]="['vld-err']">Name is required.</p>
+				</div>
+				<div [ngClass]="['cnt-frm-row', 'inline']">
+		            <p [ngClass]="['cnt-frm-lbl', 'inline']">Name</p>
+		            <input type="text" formControlName="name" id="name" [ngClass]="['cnt-frm-txt', 'flex']">
+	            </div>
+            </div>
+            <div>
+                <div *ngIf="contactFormSubmited && email.errors != null && (email.errors.required || email.errors.email)">
+                   <p [ngClass]="['vld-err']">Valid email is required.</p>
+                </div>
+                <div [ngClass]="['cnt-frm-row', 'inline']">
+                    <p [ngClass]="['cnt-frm-lbl', 'inline']">Email</p>
+                    <input type="email" formControlName="email" id="email" [ngClass]="['cnt-frm-txt', 'flex']">
+                </div>
+            </div>
+            <div>
+                <div *ngIf="contactFormSubmited && company.errors != null && company.errors.required">
+                   <p [ngClass]="['vld-err']">Company is required.</p>
+                </div>
+                <div [ngClass]="['cnt-frm-row', 'inline']">
+                    <p [ngClass]="['cnt-frm-lbl', 'inline']">Company</p>
+                    <input type="text" formControlName="company" id="company" [ngClass]="['cnt-frm-txt', 'flex']">
+                </div>
+            </div>
+            <div>
+                <div *ngIf="contactFormSubmited && country.errors != null && country.errors.required">
+                   <p [ngClass]="['vld-err']">Country is required.</p>
+                </div>
+                <div [ngClass]="['cnt-frm-row', 'inline']">
+                    <p [ngClass]="['cnt-frm-lbl', 'inline']">Country</p>
+                    <input type="text" formControlName="country" id="country" [ngClass]="['cnt-frm-txt', 'flex']">
+                </div>
+            </div>
+            <div>
+                <div *ngIf="contactFormSubmited && message.errors != null && message.errors.required">
+                   <p [ngClass]="['vld-err']">Message is required.</p>
+                </div>
+                <div [ngClass]="['cnt-frm-row', 'inline']">
+                    <p [ngClass]="['cnt-frm-lbl', 'inline']">Message</p>
+                    <textarea formControlName="message" id="message" [ngClass]="['cnt-frm-txt', 'flex']"></textarea>
+                </div>
+            </div>
+            
+            <button type="submit">Submit</button> 
+		</form>
+	</div>
+	
+</div>

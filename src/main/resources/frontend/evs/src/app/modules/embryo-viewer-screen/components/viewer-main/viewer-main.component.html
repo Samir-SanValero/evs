@@ -1,0 +1,105 @@
+<div [ngClass]="'container-main'">
+  <div [ngClass]="'main-embryo-icon'">
+      <div [ngClass]="'embryo-icon'" [style.background-color]="embryo.status.color">
+        {{embryo.dishLocationNumber}}
+      </div>
+  </div>
+
+  <div [ngClass]="'main-list-events'">
+    <div [ngClass]="'list-events-title'">
+      EMBRYO EVENTS
+    </div>
+
+    <div [ngClass]="'list-events'">
+      <div [ngClass]="'event'" *ngFor="let tag of tagList">
+        <div [ngClass]="'event-value'">{{tag.dateView}}</div>
+        <div [ngClass]="'event-value event-value-border selectable'" *ngIf="tag.acronym !== 'IMG-A' &&
+                   tag.acronym !== 'IMG-L' &&
+                   tag.acronym !== 'IMG-C' &&
+                   tag.acronym !== 'IMG-T'">
+          {{tag.acronym}}
+          <div [ngClass]="'tooltip-text'">
+            <p [ngClass]="'text-bold'">INFORMATION</p>
+            <p>Time:&nbsp;{{tag.dateView}}</p>
+            <p>Tag:&nbsp;{{tag.name}}</p>
+            <div *ngIf="tag.eventsView !== undefined">
+              <p [ngClass]="'text-bold'">Morphological events:</p>
+              <div *ngFor="let event of tag.eventsView">
+                <p>{{event.name}}:&nbsp;{{event.value}}</p>
+              </div>
+            </div>
+
+            <img *ngIf="tag.imageView != null"
+                 [src]="'data:image/jpg;base64,'+ tag.imageView.transformedImage"
+                 [alt]="'No image'"
+                 [ngStyle]="{'width': tag.imageView.width, 'height':'auto'}">
+          </div>
+        </div>
+
+          <span [ngClass]="'event-value-image-container event-value-border selectable'" *ngIf="tag.acronym === 'IMG-A'">
+            <img [ngClass]="'event-value-image'" alt="'draw arrow'" [src]="'./assets/arrow_tag_icon.svg'">
+          </span>
+
+          <span [ngClass]="'event-value-image-container event-value-border selectable'" *ngIf="tag.acronym === 'IMG-L'">
+            <img [ngClass]="'event-value-image'" alt="'draw line'" [src]="'./assets/line_tag_icon.svg'">
+          </span>
+
+            <span [ngClass]="'event-value-image-container event-value-border selectable'" *ngIf="tag.acronym === 'IMG-C'">
+            <img [ngClass]="'event-value-image'" alt="'draw circle'" [src]="'./assets/circle_tag_icon.svg'">
+          </span>
+
+            <span [ngClass]="'event-value-image-container event-value-border selectable'" *ngIf="tag.acronym === 'IMG-T'">
+            <img [ngClass]="'event-value-image'" alt="'write text'" [src]="'./assets/text_tag_icon.svg'">
+            </span>
+
+          <div [ngClass]="'event-item'" *ngFor="let event of tag.eventsView">
+            <div [ngClass]="'event-value'">
+              {{event.acronym}}
+            </div>
+            <div [ngClass]="'event-value'">{{event.value}}</div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div [ngClass]="'main-image-container'" (dblclick)="openModalImage()" data-toggle="modal" data-target="#openModalImage">
+    <canvas id="canvas" [ngClass]="'canvas'"></canvas>
+    <div [ngClass]="'image-outer'">
+
+        <img [ngClass]="'image-inner'"
+             [ngStyle]="{ 'width': image.width,
+                          'height':'auto',
+                          'border-color': embryo.status.color }"
+             *ngIf="image != null"
+             [src]="'data:image/png;base64,' + image.transformedImage"
+             [alt]="'No image'"
+             id="image">
+    </div>
+  </div>
+
+    <div *ngIf="showModal === true" class="modal fade" id="openModalImage" tabindex="-1" role="dialog" aria-labelledby="openModalImageLabel" [attr.style]="displayModalBlock"aria-hidden="true" [ngClass]="showModal === true ? 'fade show' : ''">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content modalImageEnbryo">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Image viewer</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModalImage()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div>
+              <app-viewer-timeline [ngClass]="'third-column-timeline'"></app-viewer-timeline>
+            </div>
+
+            <img [ngClass]="'imageModalEmbryo'"
+             *ngIf="image != null"
+             [src]="'data:image/png;base64,' + image.transformedImage"
+             [alt]="'No image'">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>

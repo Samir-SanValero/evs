@@ -1,0 +1,128 @@
+{
+  "properties": [
+    {
+      "name": "patient.photo.size.max",
+      "type": "java.lang.Integer",
+      "description": "Max character size for patient photos."
+    },
+    {
+      "name": "patient.photo.height.max",
+      "type": "java.lang.Integer",
+      "description": "Max height of patient photos."
+    },
+    {
+      "name": "patient.photo.width.max",
+      "type": "java.lang.Integer",
+      "description": "Max width of patient photos."
+    },
+    {
+      "name": "patient.photo.types.allowed",
+      "type": "java.lang.String",
+      "description": "Allowed image types for patient image."
+    },
+    {
+      "name": "jwt.secret",
+      "type": "java.lang.String",
+      "description": "Secret for generating JWT tokens."
+    },
+    {
+      "name": "jwt.token.expiration.time",
+      "type": "java.lang.String",
+      "description": "JWT token expiration time."
+    },
+    {
+      "name": "jwt.refresh.token.expiration.time",
+      "type": "java.lang.String",
+      "description": "JWT refresh token expiration time."
+    },
+    {
+      "name": "security.oauth2.resource.filter-order",
+      "type": "java.lang.String",
+      "description": "Description for security.oauth2.resource.filter-order."
+    },
+    {
+      "name": "security.signing-key",
+      "type": "java.lang.String",
+      "description": "Description for security.signing-key."
+    },
+    {
+      "name": "security.encoding-strength",
+      "type": "java.lang.String",
+      "description": "Description for security.encoding-strength."
+    },
+    {
+      "name": "security.security-realm",
+      "type": "java.lang.String",
+      "description": "Description for security.security-realm."
+    },
+    {
+      "name": "jwt.auth.token.expiration.time",
+      "type": "java.lang.String",
+      "description": "Description for jwt.auth.token.expiration.time."
+    },
+    {
+      "name": "refresh.token.secret",
+      "type": "java.lang.String",
+      "description": "Description for refresh.token.secret."
+    },
+    {
+      "name": "refresh.token.expiration.time",
+      "type": "java.lang.String",
+      "description": "Description for refresh.token.expiration.time."
+    },
+    {
+      "name": "media.default.image.folder",
+      "type": "java.lang.String",
+      "description": "Default image root folder."
+    },
+    {
+      "name": "media.new.default.image.folder",
+      "type": "java.lang.String",
+      "description": "Default image root folder."
+    },
+    {
+      "name": "job.media.repeat.interval",
+      "type": "java.lang.String",
+      "description": "Scan media folder job repeat interval."
+    },
+    {
+      "name": "patient.historic.time.days",
+      "type": "java.lang.String",
+      "description": "Time without new data for patient to be considered."
+    },
+    {
+      "name": "patient.historic.page.size",
+      "type": "java.lang.String",
+      "description": "Number of patients per page when retrieving."
+    },
+    {
+      "name": "video.export.firstimage.seconds",
+      "type": "java.lang.Integer",
+      "description": "Video export, seconds for first image"
+    },
+    {
+      "name": "video.export.lastimage.seconds",
+      "type": "java.lang.Integer",
+      "description": "Video export, seconds for last image"
+    },
+    {
+      "name": "video.export.firstimage.fadeout",
+      "type": "java.lang.Double",
+      "description": "Video export, percentage of time for first image fade out"
+    },
+    {
+      "name": "video.export.lastimage.fadein",
+      "type": "java.lang.Double",
+      "description": "Video export, percentage of time for last image fade in"
+	},
+    {
+      "name": "default.embryo.status.name",
+      "type": "java.lang.String",
+      "description": "When a new embryo is found searching images, set this as it's default status."
+    },
+    {
+      "name": "job.notification.repeat.interval",
+      "type": "java.lang.String",
+      "description": "Description for job.notification.repeat.interval."
+    }
+  ] }

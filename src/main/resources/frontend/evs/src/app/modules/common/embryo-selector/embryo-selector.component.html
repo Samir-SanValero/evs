@@ -1,0 +1,278 @@
+<div [ngClass]="'embryo-selector-container'">
+
+  <div [ngClass]="'embryo-selector-title'" *ngIf="title !== undefined">
+    {{title}}
+  </div>
+
+
+  <div class="embryo-selector_25">
+
+    <div *ngFor="let embryo of embryos | slice:1">
+
+      <div class="embryo selectable em{{embryo.dishLocationNumber}}" *ngIf="embryo !== undefined" (click)="selectEmbryo(embryo)" [style.background-color]="embryo.status.color">
+
+        <div>
+          {{ embryo.dishLocationNumber }}
+        </div>
+
+      </div>
+
+      <div class="embryo-empty" *ngIf="embryo === undefined">
+
+        <div></div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--<div [ngClass]="'embryo-selector_12'" *ngIf="change === 1">
+
+    <div [ngClass]="'embryo-row'">
+      &lt;!&ndash; Hidden &ndash;&gt;
+      <div [ngClass]="'embryo-hidden'"></div>
+      &lt;!&ndash; Hidden &ndash;&gt;
+
+      &lt;!&ndash; 1 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo1.status !== undefined" (click)="selectEmbryo(embryo1)" [style.background-color]="embryo1.status.color">
+        <div>1</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo1.status === undefined">
+        <div>0</div>
+      </div>
+      &lt;!&ndash; 1 &ndash;&gt;
+
+      &lt;!&ndash; 2 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo2.status !== undefined" (click)="selectEmbryo(embryo2)" [style.background-color]="embryo2.status.color">
+
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo2.status === undefined">
+
+      </div>
+      &lt;!&ndash; 2 &ndash;&gt;
+
+      &lt;!&ndash; Hidden &ndash;&gt;
+      <div [ngClass]="'embryo-hidden'"></div>
+      &lt;!&ndash; Hidden &ndash;&gt;
+    </div>
+
+    <div [ngClass]="'embryo-row'">
+      &lt;!&ndash; 3 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo3.status !== undefined" (click)="selectEmbryo(embryo3)" [style.background-color]="embryo3.status.color">
+        <div>3</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo3.status === undefined">
+      </div>
+      &lt;!&ndash; 3 &ndash;&gt;
+
+      &lt;!&ndash; 4 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo4.status !== undefined" (click)="selectEmbryo(embryo4)" [style.background-color]="embryo4.status.color">
+        <div>4</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo4.status === undefined">
+      </div>
+      &lt;!&ndash; 4 &ndash;&gt;
+
+      &lt;!&ndash; 5 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo5.status !== undefined" (click)="selectEmbryo(embryo5)" [style.background-color]="embryo5.status.color">
+        <div>5</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo5.status === undefined">
+      </div>
+      &lt;!&ndash; 5 &ndash;&gt;
+
+      &lt;!&ndash; 6 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo6.status !== undefined" (click)="selectEmbryo(embryo6)" [style.background-color]="embryo6.status.color">
+        <div>6</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo6.status === undefined">
+      </div>
+      &lt;!&ndash; 6 &ndash;&gt;
+    </div>
+    <div [ngClass]="'embryo-row'">
+      &lt;!&ndash; 7 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo7.status !== undefined" (click)="selectEmbryo(embryo7)" [style.background-color]="embryo7.status.color">
+        <div>7</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo7.status === undefined">
+      </div>
+      &lt;!&ndash; 7 &ndash;&gt;
+
+      &lt;!&ndash; 8 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo8.status !== undefined" (click)="selectEmbryo(embryo8)" [style.background-color]="embryo8.status.color">
+        <div>8</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo8.status === undefined">
+      </div>
+      &lt;!&ndash; 8 &ndash;&gt;
+
+      &lt;!&ndash; 9 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo9.status !== undefined" (click)="selectEmbryo(embryo9)" [style.background-color]="embryo9.status.color">
+        <div>9</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo9.status === undefined">
+      </div>
+      &lt;!&ndash; 9 &ndash;&gt;
+
+      &lt;!&ndash; 10 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo10.status !== undefined" (click)="selectEmbryo(embryo10)" [style.background-color]="embryo10.status.color">
+        <div>10</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo10.status === undefined">
+      </div>
+      &lt;!&ndash; 10 &ndash;&gt;
+    </div>
+    <div [ngClass]="'embryo-row'">
+      &lt;!&ndash; Hidden &ndash;&gt;
+      <div [ngClass]="'embryo-hidden'"></div>
+      &lt;!&ndash; Hidden &ndash;&gt;
+
+      &lt;!&ndash; 11 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo11.status !== undefined" (click)="selectEmbryo(embryo11)" [style.background-color]="embryo11.status.color">
+        <div>11</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo11.status === undefined">
+      </div>
+      &lt;!&ndash; 11 &ndash;&gt;
+
+      &lt;!&ndash; 12 &ndash;&gt;
+      <div [ngClass]="'embryo selectable'" *ngIf="embryo12.status !== undefined" (click)="selectEmbryo(embryo12)" [style.background-color]="embryo12.status.color">
+        <div>12</div>
+      </div>
+      <div [ngClass]="'embryo-empty'" *ngIf="embryo12.status === undefined">
+      </div>
+      &lt;!&ndash; 12 &ndash;&gt;
+
+      &lt;!&ndash; Hidden &ndash;&gt;
+      <div [ngClass]="'embryo-hidden'"></div>
+      &lt;!&ndash; Hidden &ndash;&gt;
+    </div>
+  </div>-->
+
+</div>
+
+
+
+
+<!--<div id="container_embryos" [ngClass]="'container_embryos'">-->
+<!--  EMBRYOS-->
+
+<!--  <div [ngClass]="'all_emb'">-->
+<!--    <div [ngClass]="'emb_row'">-->
+<!--      <div [ngClass]="'caj-emb emb_hidden'">-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 1 &ndash;&gt;-->
+<!--      <div *ngIf="embryo1.status !== undefined" (click)="selectEmbryo(embryo1)" [ngClass]="'caj-emb'" [style.background-color]="embryo1.status.color">-->
+<!--        <div>1</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo1.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 1 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 2 &ndash;&gt;-->
+<!--      <div *ngIf="embryo2.status !== undefined" (click)="selectEmbryo(embryo2)" [ngClass]="'caj-emb'" [style.background-color]="embryo2.status.color">-->
+<!--        <div>2</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo2.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 2 &ndash;&gt;-->
+
+<!--      <div [ngClass]="'caj-emb emb_hidden'">-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <div [ngClass]="'emb_row'">-->
+<!--      &lt;!&ndash; 3 &ndash;&gt;-->
+<!--      <div *ngIf="embryo3.status !== undefined" (click)="selectEmbryo(embryo3)" [ngClass]="'caj-emb'" [style.background-color]="embryo3.status.color">-->
+<!--        <div>3</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo3.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 3 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 4 &ndash;&gt;-->
+<!--      <div *ngIf="embryo4.status !== undefined" (click)="selectEmbryo(embryo4)" [ngClass]="'caj-emb'" [style.background-color]="embryo4.status.color">-->
+<!--        <div>4</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo4.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 4 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 5 &ndash;&gt;-->
+<!--      <div *ngIf="embryo5.status !== undefined" (click)="selectEmbryo(embryo5)" [ngClass]="'caj-emb'" [style.background-color]="embryo5.status.color">-->
+<!--        <div>5</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo5.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 5 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 6 &ndash;&gt;-->
+<!--      <div *ngIf="embryo6.status !== undefined" (click)="selectEmbryo(embryo6)" [ngClass]="'caj-emb'" [style.background-color]="embryo6.status.color">-->
+<!--        <div>6</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo6.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 6 &ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <div [ngClass]="'emb_row'">-->
+<!--      &lt;!&ndash; 7 &ndash;&gt;-->
+<!--      <div *ngIf="embryo7.status !== undefined" (click)="selectEmbryo(embryo7)" [ngClass]="'caj-emb'" [style.background-color]="embryo7.status.color">-->
+<!--        <div>7</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo7.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 7 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 8 &ndash;&gt;-->
+<!--      <div *ngIf="embryo8.status !== undefined" (click)="selectEmbryo(embryo8)" [ngClass]="'caj-emb'" [style.background-color]="embryo8.status.color">-->
+<!--        <div>8</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo8.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 8 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 9 &ndash;&gt;-->
+<!--      <div *ngIf="embryo9.status !== undefined" (click)="selectEmbryo(embryo9)" [ngClass]="'caj-emb'" [style.background-color]="embryo9.status.color">-->
+<!--        <div>9</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo9.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 9 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 10 &ndash;&gt;-->
+<!--      <div *ngIf="embryo10.status !== undefined" (click)="selectEmbryo(embryo10)" [ngClass]="'caj-emb'" [style.background-color]="embryo10.status.color">-->
+<!--        <div>10</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo10.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 10 &ndash;&gt;-->
+<!--    </div>-->
+
+<!--    <div [ngClass]="'emb_row'">-->
+<!--      <div [ngClass]="'caj-emb emb_hidden'">-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; 11 &ndash;&gt;-->
+<!--      <div *ngIf="embryo11.status !== undefined" (click)="selectEmbryo(embryo11)" [ngClass]="'caj-emb'" [style.background-color]="embryo11.status.color">-->
+<!--        <div>11</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo11.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 11 &ndash;&gt;-->
+
+<!--      &lt;!&ndash; 12 &ndash;&gt;-->
+<!--      <div *ngIf="embryo12.status !== undefined" (click)="selectEmbryo(embryo12)" [ngClass]="'caj-emb'" [style.background-color]="embryo12.status.color">-->
+<!--        <div>12</div>-->
+<!--      </div>-->
+<!--      <div *ngIf="embryo12.status === undefined" [ngClass]="'caj-emb-no-sel'">-->
+<!--      </div>-->
+<!--      &lt;!&ndash; 12 &ndash;&gt;-->
+
+<!--      <div [ngClass]="'caj-emb emb_hidden'">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->

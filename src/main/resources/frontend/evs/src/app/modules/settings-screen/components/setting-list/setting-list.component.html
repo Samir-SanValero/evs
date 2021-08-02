@@ -1,0 +1,25 @@
+<div [ngClass]="'setting-list-container'">
+  <div [ngClass]="'setting-list-title'">
+    SETTINGS
+  </div>
+
+  <div [ngClass]="'setting-list'">
+    <!-- OPTIONS -->
+
+        <div [ngClass]="'setting-list-option-disabled'">USERS</div>
+<!--    <div [ngClass]="'setting-list-option selectable'" (click)="changeSelectedOptionGroup(userGroup)">USERS</div>-->
+
+    <div [ngClass]="'setting-list-option selectable'" (click)="changeSelectedOptionGroup(tagGroup)">EMBRYO TAG</div>
+
+    <div [ngClass]="'setting-list-option selectable'" (click)="changeSelectedOptionGroup(statusGroup)">EMBRYO STATUS</div>
+
+        <div [ngClass]="'setting-list-option selectable'" (click)="changeSelectedOptionGroup(eventGroup)" >EMBRYO EVENTS</div>
+<!--    <div [ngClass]="'setting-list-option-disabled'">EMBRYO EVENTS</div>-->
+
+    <div [ngClass]="'setting-list-option selectable'" (click)="changeSelectedOptionGroup(phaseGroup)">EMBRYO PHASES</div>
+<!--    <div [ngClass]="'setting-list-option-disabled'">EMBRYO PHASES</div>-->
+
+    <!-- OPTIONS -->
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+<div [ngClass]="'patient-finder-container'">
+    <form [ngClass]="'patient-finder-form'">
+      <div [ngClass]="'patient-finder-options'">
+        <select [ngClass]="'select-css selectable'" [(ngModel)]="selectedSearchParameter" (ngModelChange)="changeSearchParameter($event)" name="patientSearchParameterSelect">
+          <option *ngFor="let searchParameter of searchParameters" [ngValue]="searchParameter">
+            {{searchParameter}}
+          </option>
+        </select>
+        <input [ngClass]="'patient-finder-input selectable'" name="searchInput" type="text" placeholder="Type to search" [ngModel]="searchValue" (ngModelChange)="findPatient($event)">
+      </div>
+      <div [ngClass]="'patient-finder-found-list'">
+        <div  *ngFor="let searchFoundPatient of searchFoundPatients">
+          <div [ngClass]="'found-patient selectable'" (click)="changeSelectedPatient(searchFoundPatient.patientData.id)" >
+            ID: {{searchFoundPatient.patientData.id}}
+            Name: {{searchFoundPatient.patientData.name}}
+          </div>
+        </div>
+      </div>
+    </form>
+</div>

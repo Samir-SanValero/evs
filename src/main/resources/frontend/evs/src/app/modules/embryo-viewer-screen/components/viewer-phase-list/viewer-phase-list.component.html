@@ -1,0 +1,17 @@
+<div [ngClass]="'container-phase-list'">
+
+  <div [ngClass]="'phase-list-title'">
+    PHASES
+  </div>
+  <div [ngClass]="'phase-list'">
+    <div [ngClass]="'phase selectable'" *ngFor="let basePhase of basePhases; let i = index" (click)="selectPhase(basePhase)">
+        <span>
+          {{basePhase.acronym}}
+        </span>
+      <div [ngClass]="'tooltip-text'">
+        <p>Phase: {{basePhase.name}}</p>
+<!--        <p>Description: {{basePhase.description}}</p>-->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<div id="zoomMenu" #zoomMenu class="zoo-menu">
+	    <p>Zoom level: </p>
+	    <input type="text" name="manualZoom" value="{{zoomPercentage}}" [ngClass]="'mnl-zoo'" (change)="changeManuallyZoom($event)"><p>%</p>
+	    <button [ngClass]="['btn-zoo-ctrl', 'selectable']" (click)="lessZoom()" (mousedown)="activatePressingZoomNegative()" (mouseup)="deActivatePressingZoomNegative()" (mouseleave)="deActivatePressingZoomNegative()" (mouseout)="deActivatePressingZoomNegative()">-</button>
+	    <button [ngClass]="['btn-zoo-ctrl', 'selectable']" (click)="resetZoom()">FIT</button>
+	    <button [ngClass]="['btn-zoo-ctrl', 'selectable']" (click)="moreZoom()" (mousedown)="activatePressingZoomPositive()" (mouseup)="deActivatePressingZoomPositive()" (mouseleave)="deActivatePressingZoomPositive()" (mouseout)="deActivatePressingZoomPositive()">+</button>
+</div>

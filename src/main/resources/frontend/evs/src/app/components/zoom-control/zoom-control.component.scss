@@ -1,0 +1,38 @@
+.btn-zoo-ctrl {
+    height: 30px;
+    margin-left:5px;
+    margin-right:5px;
+    padding:2px 2px 2px 2px;
+	font-weight: normal;
+	background-color: #404040;
+	color: #cccacc;
+}
+
+.mnl-zoo {
+    width:70px;
+    height:25px;
+    font-size:14px;
+}
+
+.zoo-menu {
+    display:inline-block;
+    height:50px;
+    height:50px;
+    width:17%;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    border:1px solid #cdcbcd;
+}
+
+.zoo-menu > * {
+    display:inline;
+}
+
+.selectable {
+  border: solid #404040 2px;
+  cursor: pointer;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}

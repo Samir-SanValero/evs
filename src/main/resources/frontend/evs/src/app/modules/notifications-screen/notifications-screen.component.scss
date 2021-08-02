@@ -1,0 +1,280 @@
+.main-cntr {
+	margin:5px 5px 5px 5px;
+}
+
+.col1 {
+	width:30%;
+	flex-direction:column;
+	border:1px solid #cdcbcd;
+	border-radius:2px;
+    margin:5px 5px 5px 5px;
+}
+
+.col1-1 {
+    width:98%;
+    flex-direction:row;
+    border:1px solid #cdcbcd;
+    border-radius:2px;
+    margin:5px 5px 5px 5px;
+}
+.col1 * {
+	color: #cdcbcd;
+	margin:5px 5px 5px 5px;
+}
+.col2 {
+	width:43%;
+    flex-direction:column;
+    border:1px solid #cdcbcd;
+    border-radius:2px;
+    margin:5px 5px 5px 5px;
+    max-height: 900px;
+}
+
+.overflow-y {
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.col2 * {
+    color: #cdcbcd;
+    margin:5px 5px 5px 5px;
+}
+.col3 {
+	width:25%;
+    flex-direction:column;
+    border:1px solid #cdcbcd;
+    border-radius:2px;
+    margin:5px 5px 5px 5px;
+    max-height: 900px;
+}
+.col3 * {
+    color: #cdcbcd;
+}
+
+.col2 > h6 {
+    width:100%;
+    margin:5px 5px 5px 5px;
+}
+.col3 > h6 {
+    width:100%;
+    margin:5px 5px 5px 5px;
+}
+
+.sub-pnl {
+	background-color: #646464;
+	width:98%;
+	margin-left: auto;
+    margin-right: auto;
+    margin:5px 5px 5px 5px;
+}
+
+.sub-pnl-brdr {
+    background-color: #646464;
+    width:58%;
+//    margin-left: auto;
+//    margin-right: auto;
+    margin:0px 5px 0px 5px;
+    border: 2px solid #646464;
+}
+.sub-pnl-brdr-slct {
+    background-color: #646464;
+    width:98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin:5px 5px 5px 5px;
+    border: 2px solid #cdcbcd;
+}
+
+.sub-pnl > h6 {
+    width:100%;
+}
+
+.sub-pnl-alrts {
+    border: 1px solid #525252;
+    width:100%;
+    margin: 0px 0px 0px 0px;
+	flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+    width:100%;
+}
+.flex-row  input {
+    width:60%;
+    background-color: #3e3e3e;
+    border: 0px;
+    float: right;
+}
+
+
+.spcl-input {
+    width:80% !important;
+}
+
+.spcl-txt-area {
+    width:100% !important;
+    background-color: #3e3e3e;
+    border: 0px;
+    resize: none;
+}
+
+.inf-cll-day {
+    width:12%;
+    background-color:#3e3e3e;
+    cursor:pointer;
+}
+
+.inf-cll-day > p {
+    margin-left: auto;
+    margin-right: auto;
+}
+.inf-cll-day-selected {
+    background-color: #4db0d7;
+}
+
+.inf-cll-period {
+    flex-direction: row;
+    width:30.5%;
+    background-color:#3e3e3e;
+    cursor:pointer;
+}
+.inf-cll-period-selected {
+    background-color: #4db0d7;
+}
+.npt-mnth-day {
+    width:100% !important;
+    background-color:#3e3e3e;
+}
+
+.sav-butt {
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#3e3e3e;
+    border: 0px;
+}
+
+.cncl-button {
+    background-color: #646464;
+    border:0px;
+}
+
+.err-mss {
+    float: right;
+}
+
+.npt-tme {
+    float: left !important;
+    width:40% !important;
+}
+
+.alrt-row {
+    background-color:#3e3e3e;
+    width:93% !important;
+    margin: 0px 0px 4px 10px;
+    padding :0px 5px 0px 5px;
+}
+
+
+.height-95 {
+    height:95%;
+}
+.height-90 {
+    height:90%;    
+}
+
+.width-97 {
+    width:97%;
+}
+
+.width-70{
+    width:70%;
+}
+
+.width-60{
+    width:60%;
+}
+
+.width-30{
+    width:30%;
+}
+
+.width-25{
+    width:25%;
+}
+
+.width-20{
+    width:20%;
+}
+
+.width-15{
+    width:15%;
+}
+
+.sld-on-off {
+    width:40px;
+    margin-left:auto !important;
+}
+
+.btn-right {
+    width:120px;
+    margin-left:auto !important;
+}
+
+.rmdr-date-picker {
+    width:250px;
+    margin-left:auto !important;
+}
+
+.vld-err {
+    color: #4d0206 !important;
+}
+
+
+
+::ng-deep {
+    .mat-slide-toggle-thumb {
+        background-color: #666666;
+    }
+
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+        background-color: #4db0d7;
+    }
+
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+        background-color: #3e3e3e;
+    }
+
+}
+
+::ng-deep {
+    .popover-header {
+        background-color: #3c3c3c;
+        color: #cdcbcd;
+    }
+
+    .popover-content {
+        background-color: #525252;
+        color: #cdcbcd;
+    }
+
+    .btn-outline-secondary {
+        background-color: #646464;
+        color: #cdcbcd;
+    }
+
+    .bs-popover-left > .arrow::after {
+        border-left-color: #525252;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+

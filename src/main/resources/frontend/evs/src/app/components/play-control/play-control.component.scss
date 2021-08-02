@@ -1,0 +1,71 @@
+.btn-ply-ctl {
+    height: 30px;
+    margin-left:5px;
+    margin-right:5px;
+    padding:2px 2px 2px 2px;
+	font-weight: normal;
+	background-color: #404040;
+	color: #cccacc;
+}
+
+.sldr-fps {
+    width:40%; 
+    margin:0px 0px 0px 0px;
+    display:inline-block;
+}
+
+.ply-menu {
+    display:inline-block;
+    height:50px;
+    width:25%;
+    border:1px solid #cdcbcd;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.selectable {
+  border: solid #404040 2px;
+  cursor: pointer;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+
+
+.cstm-sldr-fps {
+    font-size: 12px;
+    display:inline;
+}
+
+.cstm-sldr-fps > p {
+    display:contents;
+}
+
+::ng-deep {
+  .cstm-sldr-fps .ng5-slider .animate {
+    margin-top: 20px;
+  }
+    
+  .cstm-sldr-fps .ng5-slider .ng5-slider-bar {
+    background: black;
+    height: 2px;
+  }
+  
+  .cstm-sldr-fps .ng5-slider .ng5-slider-selection {
+    background: black;
+  }
+  
+  .cstm-sldr-fps .ng5-slider .ng5-slider-pointer {
+    width: 16px;
+    height: 16px;
+    top: -7px; /* to remove the default positioning */
+    bottom: 0;
+    background-color: #449cc0;
+  }
+  
+  .cstm-sldr-fps .ng5-slider .ng5-slider-pointer:after {
+    display:none;
+  }
+}

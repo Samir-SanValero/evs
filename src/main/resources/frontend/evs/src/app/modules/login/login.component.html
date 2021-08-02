@@ -1,0 +1,38 @@
+<div [ngClass]="'mid_screen_container_login'">
+    <div [ngClass]="'container_login_form'">
+      <div [ngClass]="'caj-log'">
+
+        <div [ngClass]="'caj-log-ttl'">
+          <h2 [ngClass]="'h2-log txt-accent-color'">EVS</h2>
+
+          <h3 [ngClass]="'h3-log'">
+            <span [ngClass]="'txt-accent-color'">E</span><span>mbryo</span>
+            <span [ngClass]="'txt-accent-color'">V</span><span>isual</span>
+            <span [ngClass]="'txt-accent-color'">S</span><span>tudio</span>
+          </h3>
+
+          <h4 [ngClass]="'h4-log'">Experience our new Time-Lapse Imaging Software</h4>
+        </div>
+
+        <div [ngClass]="'caj-log-form'">
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div [ngClass]="'form-group'">
+              <input type="text" formControlName="username" [ngClass]="'log-inp form-control rounded-0'" id="user_field" aria-describedby="emailHelp" placeholder="user">
+              <div *ngIf="submitted && loginForm.controls.username.errors" class="invalid-feedback">
+                <div *ngIf="loginForm.controls.username.errors.required">Username is required</div>
+              </div>
+            </div>
+            <div [ngClass]="'form-group'">
+              <input type="password" formControlName="password" [ngClass]="'log-inp form-control rounded-0'" id="password_field" placeholder="password">
+              <div *ngIf="submitted && loginForm.controls.password.errors" class="invalid-feedback">
+                <div *ngIf="loginForm.controls.password.errors.required">Password is required</div>
+              </div>
+            </div>
+			<div class="clb h30"></div>
+            <button type="submit" [routerLink]="'/mainMenu'" [ngClass]="'log-btn btn btn-primary'">LOG IN</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div [ngClass]="'setting-data-container'">
+
+<!--  <div [ngClass]="'setting-data-title'">-->
+<!--    USERS-->
+<!--  </div>-->
+
+<!--  <div [ngClass]="'setting-data-description'">-->
+<!--    In this group you can manage different options.-->
+<!--  </div>-->
+
+  <app-setting-users         [ngClass]="'setting-data'" *ngIf="selectedOptionGroup === userGroup"  ></app-setting-users>
+  <app-setting-tags          [ngClass]="'setting-data'" *ngIf="selectedOptionGroup === tagGroup"   ></app-setting-tags>
+  <app-setting-embryo-event  [ngClass]="'setting-data'" *ngIf="selectedOptionGroup === eventGroup" ></app-setting-embryo-event>
+  <app-setting-embryo-phase  [ngClass]="'setting-data'" *ngIf="selectedOptionGroup === phaseGroup" ></app-setting-embryo-phase>
+  <app-setting-embryo-status [ngClass]="'setting-data'" *ngIf="selectedOptionGroup === statusGroup"></app-setting-embryo-status>
+</div>
+
+
+
+
+
+
+
+
+
+
+

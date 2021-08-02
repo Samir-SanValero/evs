@@ -1,0 +1,146 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.setting-data {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.setting-list {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 10px;
+}
+
+.setting-buttons {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.setting-button-add {
+  width: 10%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFFFFF;
+  background: #404040 url("../../../../../assets/add_element.svg") no-repeat center;
+}
+
+.setting-button-save {
+  width: 10%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFFFFF;
+  background: #404040 url("../../../../../assets/save_element.svg") no-repeat center;
+}
+
+.setting-button-remove {
+  width: 10%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #FFFFFF;
+  background: #404040 url("../../../../../assets/remove_element.svg") no-repeat center;
+}
+
+.setting-list-item {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+
+  background-color: #404040;
+}
+
+.setting-right-pane {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px;
+
+  background-color: #646464;
+}
+
+.setting-left-pane {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px;
+
+  background-color: #646464;
+}
+
+.pane-item-input {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.pane-item-input-label{
+  width: 100%;
+  height: 50%;
+
+  display: flex;
+  font-weight: bold;
+}
+
+.pane-item-input-value {
+  width: 20%;
+  height: 50%;
+
+  background-color: #404040;
+  color: #cccacc;
+  border: solid #404040 2px;
+}
+
+.pane-item-input-text {
+  width: 100%;
+  height: 50%;
+
+  background-color: #404040;
+  color: #cccacc;
+  border: solid #404040 2px;
+}
+

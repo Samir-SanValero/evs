@@ -1,0 +1,83 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+
+.container-model-list {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+
+  border: solid #cccacc 1px;
+  cursor: default;
+  font-size: 14px;
+  color: #cccacc;
+}
+
+.model-list-title {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  font-weight: bold;
+}
+
+.model-list {
+  width: 100%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  padding: 10px;
+}
+
+.model {
+  width: 100%;
+  height: auto;
+  min-width: 50px;
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+
+  background-color: #404040;
+  color: #cccacc;
+}
+
+.model .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  margin-left: 23%;
+  background-color: #404040;
+  border: solid #404040 2px;
+  color: #cccacc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  justify-content: center;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+}
+
+.model:hover .tooltip-text {
+  visibility: visible;
+}
+
+.model:hover .tooltip-text:hover {
+  visibility: hidden;
+}

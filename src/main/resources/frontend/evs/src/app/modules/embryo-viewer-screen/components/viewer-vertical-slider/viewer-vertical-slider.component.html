@@ -1,0 +1,25 @@
+<div [ngClass]="'container-vertical-slider'">
+  <div [ngClass]="'vertical-slider-embryo'">
+    <div [ngClass]="'embryo-location-number'" [style.background-color]="embryo.status.color">
+      {{embryo.dishLocationNumber}}
+    </div>
+  </div>
+
+  <div [ngClass]="'vertical-slider-container'">
+    <div [ngClass]="'vertical-slider-title'">Z</div>
+
+    <div [ngClass]="'vertical-slider-input-container'">
+<!--      <input type="text" [ngClass]="'vertical-slider-input selectable'" [value]="zAxisValue">-->
+      <input type="text" [ngClass]="'vertical-slider-input'" [value]="zAxisValue" disabled>
+    </div>
+
+    <div [ngClass]="'vertical-slider'">
+      <ng5-slider
+        (userChangeEnd)="sliderChange($event)"
+        [(value)]="zAxisValue"
+        [options]="zAxisSliderOptions">
+      </ng5-slider>
+    </div>
+
+  </div>
+</div>

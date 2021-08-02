@@ -1,0 +1,98 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.setting-data-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-left: 5px;
+
+  border: solid #cccacc 1px;
+}
+
+.setting-data-title {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 10px;
+  font-weight: bold;
+}
+
+.setting-data-description {
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 10px;
+}
+
+.setting-data {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.setting-data-input {
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: #404040;
+  color: #cccacc;
+}
+
+.setting-right-pane {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+
+  background-color: #646464;
+}
+
+.right-pane-item {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+}
+
+.setting-right-pane-buttons {
+
+}
+
+.setting-left-pane {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+
+  background-color: #646464;
+}

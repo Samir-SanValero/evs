@@ -1,0 +1,209 @@
+<app-header></app-header>
+<div [ngClass]="'vid-ctrl'">
+	<app-play-control #playControl [play]="play.bind(this)"
+		[nextFrame]="nextFrame.bind(this)"
+		[previousFrame]="previousFrame.bind(this)"
+		[sliderFrameRateMove]="sliderFrameRateMove.bind(this)"
+		[goToFirstFrame]="goToFirstFrame.bind(this)"
+		[goToLastFrame]="goToLastFrame.bind(this)"></app-play-control>
+	<app-zoom-control #zoomControl
+		[changeManuallyZoom]="changeManuallyZoom.bind(this)"
+		[activatePressingZoomNegative]="activatePressingZoomNegative.bind(this)"
+		[deActivatePressingZoomNegative]="deActivatePressingZoomNegative.bind(this)"
+		[activatePressingZoomPositive]="activatePressingZoomPositive.bind(this)"
+		[deActivatePressingZoomPositive]="deActivatePressingZoomPositive.bind(this)"
+		[moreZoom]="moreZoom.bind(this)" [lessZoom]="lessZoom.bind(this)"
+		[resetZoom]="resetZoom.bind(this)"></app-zoom-control>
+	<app-focus3-d></app-focus3-d>
+</div>
+<div [ngClass]="['flex', 'vid-cont']">
+    <div [ngClass]="['flex','vid-col1']">
+	    <div [ngClass]="['emb-id', 'flex']">
+	        <div [ngClass]="['dot']" style="background-color:{{dotColor}}">{{item.id}}</div>
+	    </div>
+	    <div [ngClass]="['cont-sldr-z', 'flex']">
+            <div>
+                <p [ngClass]="['zAxis']">Z</p>
+                <p [ngClass]="['zAxis', 'zAxis-sub-pan']">{{zAxis}}</p>
+                <div [ngClass]="['cstm-sldr-z']">
+                    <ng5-slider [value]="zAxis" [options]="sliderZOptions" (userChangeEnd)="sliderZChangeValue($event)"></ng5-slider>
+               </div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="['flex','vid-col3']">
+	    <div [ngClass]="['flex', 'tmb-cont']">
+	        <div [ngClass]="'tmbr-cont'" #visTimeline id="visTimeline">
+	            
+	        </div>
+		    <div [ngClass]="['flex', 'vid-cont2']">
+		        <div [ngClass]="['flex', 'emb-cont']">
+		            <div [ngClass]="['grid-cont', 'flex']" style="width:{{imageWidth + (borderWidth * 2) + 2}}px;">
+					    <gridster [options]="gridsterOptions" #gridster> 
+                            <gridster-item [item]="item"> 
+                                <app-embryo-image *ngIf="item.id != '-1'" id="{{item.id}}"
+							        imagesFolder="{{selectedEmbryo.photoFolder}}"
+							        #embryoImage [identifier]="item.id"   
+							        [imageWidth]="imageWidth" [optionsGridEmbryo]="gridsterOptions"
+							        [borderThick]="borderWidth"
+							        [zIndex]="zAxis"
+							        [embryo]="selectedEmbryo"
+							        [margin]="0"
+							        (loadFinishEvent)="receiveEventFromEmbryoimage($event)">
+                                </app-embryo-image> 
+					       </gridster-item>
+                        </gridster>
+					</div>
+		        </div>
+		    </div>
+	    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+		    <div [ngClass]="['flex', 'parm-supr-cont']">
+			    <div [ngClass]="['flex', 'parm-big-cont']">
+			        <h4 [ngClass]="['vid-tit']">VIDEO PARAMETERS</h4>
+			        
+			        <div [ngClass]="['vid-sbpn', 'flex']">
+			            <div [ngClass]="['flex', 'vid-prms']">
+			                <div [ngClass]="['flex', 'parm-row']">
+<!-- 			                    <div [ngClass]="['flex', 'parm-row-col']"> -->
+<!-- 			                        <p>Format</p> -->
+<!-- 			                    </div> -->
+<!-- 				                 <div [ngClass]="['parm-row-col-cell']"> -->
+<!-- 				                     <p #btnPortrait [ngClass]="['sbpn-back']" (click)="clickFormat($event)">Portrait</p> -->
+<!-- 				                     <p #btnLandscape [ngClass]="['sbpn-back']" (click)="clickFormat($event)">Landscape</p> -->
+<!-- 				                     <p #original [ngClass]="['sbpn-back', 'sbpn-back-pressed']" (click)="clickFormat($event)">Original</p> -->
+<!-- 				                 </div> -->
+			                </div>
+			                <div [ngClass]="['flex', 'parm-row']">
+			                    <div [ngClass]="['flex', 'parm-row-col']">
+			                        <p>Speed</p>
+			                    </div>
+			                    <div [ngClass]="['flex','parm-row-col2']">
+			                        <div [ngClass]="['flex','cstm-sldr-fps-param']">
+			                            <ng5-slider [ngClass]="'sldr-fps'" [(value)]="frameRate" [options]="sliderFrameRateOptions" (userChange)="sliderFrameRateMove($event)"></ng5-slider>
+			                        </div>
+			                    </div>
+			                </div>
+			                <div [ngClass]="['flex', 'parm-row']">
+			                    <div [ngClass]="['flex', 'parm-row-col']">
+			                        <p>Duration</p>
+			                    </div>
+			                    <div [ngClass]="['flex','parm-row-col2']">
+			                        {{videoDuration.toFixed(2)}} seconds
+			                    </div>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			    <form f="ngForm" [formGroup]="videoForm" (ngSubmit)="onSubmit($event)">
+				    <div [ngClass]="['flex', 'parm-big-cont-2']">
+				        <h4 [ngClass]="['vid-tit']">VIDEO FEATURES</h4>
+				        
+				        <div [ngClass]="['vid-sbpn2', 'flex']">
+				            <div [ngClass]="['flex', 'bckgr-clr-inpt']">
+				                <div [ngClass]="['flex', 'parm-row']">
+				                    <div [ngClass]="['flex', 'parm-row-col']">
+				                        <p>Audio</p>
+				                    </div>
+				                     <div [ngClass]="['parm-row-col-cell-2']">
+				                        <input type="file" (change)="readFile($event, 'audio')" accept=".mp3">
+				                     </div>
+				                </div>
+				                <div [ngClass]="['flex', 'parm-row']">
+				                    <div [ngClass]="['flex', 'parm-row-col']">
+				                        <p>Text</p>
+				                    </div>
+				                    <div [ngClass]="['flex','parm-row-col2']">
+				                        <input type="text" formControlName="text" maxlength="35">
+				                        <div [ngClass]="['flex', 'parm-row']">
+					                        <select [ngClass]="['video-font', 'flex']" formControlName="fontType" id="dropDown" autocomplete="off">
+					                            <option value="" disabled selected>Select font</option>
+					                            <option value="arial">Arial</option>
+					                            <option value="timesnewroman">Times New Roman</option>
+					                            <option value="helvetica">Helvetica</option>
+					                        </select>
+					                        <input [ngClass]="['video-color', 'flex']" type="color" formControlName="fontColor"/>
+					                        <p [ngClass]="['tbl-txt', 'flex']">Position</p>
+					                        <table #tablePosition [ngClass]="['tbl-pos']" (click)="selectPosition($event);">
+					                           <tr>
+					                               <td data-type="1-1" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                               <td data-type="1-2" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                               <td data-type="1-3" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                           </tr>
+					                           <tr>
+						                           <td data-type="2-1" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+						                           <td data-type="2-2" [ngClass]="['tbl-pos-td']" style="background-color:#646464 !important;">&nbsp;</td>
+						                           <td data-type="2-3" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                           </tr>
+					                           <tr>
+					                               <td data-type="3-1" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                               <td data-type="3-2" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                               <td data-type="3-3" [ngClass]="['tbl-pos-td']">&nbsp;</td>
+					                           </tr>
+					                        </table>
+				                        </div>
+				                    </div>
+				                </div>
+				                <div [ngClass]="['flex', 'parm-row']">
+				                    <div [ngClass]="['flex', 'parm-row-col']">
+				                        <p>Clinic logo</p>
+				                    </div>
+				                    <div [ngClass]="['flex','parm-row-col2']">
+				                        <input type="file" (change)="readFile($event, 'logo')" name="logo" accept=".png">
+				                    </div>
+				                </div>
+				                <div [ngClass]="['flex', 'parm-row']">
+			                        <div [ngClass]="['flex', 'parm-row-col']">
+			                            <p>Show time</p>
+			                        </div>
+			                        <div [ngClass]="['flex','parm-row-col2']">
+			                            <input type="checkbox" formControlName="showtime">
+			                        </div>
+			                    </div>
+			                    <div [ngClass]="['flex', 'parm-row']">
+			                        <div [ngClass]="['flex', 'parm-row-col']">
+			                            <p>Start image</p>
+			                        </div>
+			                        <div [ngClass]="['flex','parm-row-col2']">
+			                            <input type="file" (change)="readFile($event, 'startimage')" accept=".png,.gif,.jpeg,.jpg" />
+			                        </div>
+			                    </div>
+			                    <div [ngClass]="['flex', 'parm-row']">
+			                        <div [ngClass]="['flex', 'parm-row-col']">
+			                            <p>End image</p>
+			                        </div>
+			                        <div [ngClass]="['flex','parm-row-col2']">
+			                            <input type="file" (change)="readFile($event, 'endimage')" accept=".png,.gif,.jpeg,.jpg">
+			                        </div>
+			                    </div>
+				            </div>
+			                <button type="submit">Generate</button>
+			                <ngx-spinner #spinnerExport></ngx-spinner> 
+				        </div>
+				    </div>
+		<!-- 		    <input type="submit" name="save" value="Save Movie"> -->
+		<!--             <button type="button" (click)="onSubmit()">Submit</button> -->
+			    </form>
+		    
+		    </div>
+	    </div>
+    </div>
+
+    
+</div>
+
+
+
+
+

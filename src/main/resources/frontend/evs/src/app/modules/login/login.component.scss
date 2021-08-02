@@ -1,0 +1,25 @@
+/* LOGIN STYLES */
+
+body { background:url("../../../assets/login_background.png") no-repeat center center; }
+
+.caj-log-ttl { text-align:center; }
+
+h2 { font-size:2.75rem; }
+h3 { font-size:1.75rem; border-top:1px solid #ffffff; padding-top:10px; width: max-content; margin-left:auto; margin-right:auto; }
+h4 { font-size:0.7rem; }
+
+.container_login_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.caj-log { background: rgba(64,64,64, 0.75); width:90%; max-width:450px; height:400px; text-align: center; margin:auto; display:flex; flex-direction: column; padding:30px; }
+
+.caj-log-form { margin:20px; }
+.log-inp 	  { background:transparent; border:0; border-bottom:1px solid #f2f2f2; color:#f2f2f2; padding-left:0; }
+.log-inp:focus 	  { border:0; box-shadow:0px 0px 2px #888888; }
+.log-btn	  { background-color:#37afd4; border:0; width:100%; border-radius:2px; }

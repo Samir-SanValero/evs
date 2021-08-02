@@ -1,0 +1,30 @@
+.focus-3d {
+    display:inline-block;
+    height:50px;
+    width:17%;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+    border:1px solid #cdcbcd;
+}
+
+.focus-3d > * {
+    display:inline;
+}
+
+.button-3d-focus {
+    height: 30px;
+    padding:2px 2px 2px 2px;
+    width:200px;
+	background-color: #404040;
+	color: #cccacc;
+}
+
+.selectable {
+  border: solid #404040 2px;
+  cursor: pointer;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+

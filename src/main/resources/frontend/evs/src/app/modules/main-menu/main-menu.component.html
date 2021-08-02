@@ -1,0 +1,71 @@
+<app-header></app-header>
+
+<div id="container_main_menu_buttons" [ngClass]="'mid_screen_container'">
+  <div *ngIf="dataLoaded" [ngClass]="'container_main_menu_inner_buttons'">
+    <div>
+      <button [routerLink]="'/viewer'" [ngClass]="'main_menu_button main_menu_button_embryo_viewer glow-on-hover'">EMBRYO VIEWER</button>
+    </div>
+
+    <div>
+      <button [routerLink]="'/patient'" [ngClass]="'main_menu_button main_menu_button_patients glow-on-hover'">PATIENTS</button>
+    </div>
+    
+    <div>
+<!--      <button [routerLink]="'/reports'" [ngClass]="'main_menu_button main_menu_button_reports glow-on-hover'">REPORTS</button>-->
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_reports glow-on-hover'">REPORTS</button>
+    </div>
+
+    <div>
+      <button [routerLink]="'/video'" [ngClass]="'main_menu_button main_menu_button_video glow-on-hover'">VIDEO</button>
+<!--      <button [ngClass]="'main_menu_button_disabled main_menu_button_video glow-on-hover'">VIDEO</button>-->
+    </div>
+
+    <div>
+<!--      <button [ngClass]="'main_menu_button_disabled main_menu_button_notifications glow-on-hover'">NOTIFICATIONS</button>-->
+      <button [routerLink]="'/notifications'" [ngClass]="'main_menu_button main_menu_button_notifications glow-on-hover'">NOTIFICATIONS</button>
+    </div>
+
+    <div>
+      <button [routerLink]="'/settings'" [ngClass]="'main_menu_button main_menu_button_settings glow-on-hover'">SETTINGS</button>
+    </div>
+
+    <div>
+      <button [routerLink]="'/support'" [ngClass]="'main_menu_button main_menu_button_support glow-on-hover'">SUPPORT</button>
+<!--      <button [ngClass]="'main_menu_button_disabled main_menu_button_support glow-on-hover'">SUPPORT</button>-->
+    </div>
+  </div>
+
+  <!-- DISABLED - DATA NOT LOADED -->
+  <div *ngIf="!dataLoaded" [ngClass]="'container_main_menu_inner_buttons'">
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_embryo_viewer glow-on-hover'">EMBRYO VIEWER</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_patients glow-on-hover'">PATIENTS</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_reports glow-on-hover'">REPORTS</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_video glow-on-hover'">VIDEO</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_notifications glow-on-hover'">NOTIFICATIONS</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_settings glow-on-hover'">SETTINGS</button>
+    </div>
+
+    <div>
+      <button [ngClass]="'main_menu_button_disabled main_menu_button_support glow-on-hover'">SUPPORT</button>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
+

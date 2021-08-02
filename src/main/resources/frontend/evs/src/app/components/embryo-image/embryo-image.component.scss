@@ -1,0 +1,13 @@
+:host .toolbar {
+     height: 100px;
+     display: flex;
+}
+ :host gridster {
+     display: flex;
+     flex-direction: column;
+}
+
+.divButtonRight {
+    text-align: right;
+}
+

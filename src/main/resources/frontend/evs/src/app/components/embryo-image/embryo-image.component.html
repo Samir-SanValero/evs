@@ -1,0 +1,13 @@
+<div style="">
+        <div style="width:{{imageWidth + borderThick}}px; background-color:rgba(0, 0, 0, 0.0);">
+            <div id="loading_{{identifier}}"><ngx-spinner></ngx-spinner></div>
+            <div style="position: absolute; top: {{margin}}px; bottom: {{margin}}px; left: {{margin * 11}}px; right: {{margin}}px; background-color:#8c8c8c; border: {{borderThick}}px solid {{borderColor}};">
+                <pan-zoom [config]="panZoomConfig">
+                    <div style="position: relative;">
+                        <img id="image" *ngIf="currentImage != null" [src]="'data:image/png;base64,' + currentImage.image" style="width:{{imageWidth + borderThick}}px; height:auto;"  (click)="getCurrentEmbryoImage()">
+                    </div>
+                </pan-zoom>
+            </div>
+        </div>
+</div>
+

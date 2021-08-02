@@ -1,0 +1,15 @@
+<div [ngClass]="'container-model-list'">
+
+  <div [ngClass]="'model-list-title'">
+    MODELS
+  </div>
+  <div [ngClass]="'model-list'">
+    <div [ngClass]="'model selectable'" *ngFor="let model of models; let i = index">
+      {{model.name}}
+      <div [ngClass]="'tooltip-text'">
+        <p>MODEL: {{model.name}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>

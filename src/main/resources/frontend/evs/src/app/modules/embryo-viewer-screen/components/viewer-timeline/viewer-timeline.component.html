@@ -1,0 +1,15 @@
+<div [ngClass]="'container-timeline'">
+  <div [ngClass]="'timeline-title'">
+    <div [ngClass]="'timeline-title-text'">TIME</div>
+    <div [ngClass]="'timeline-title-buttons'">
+      <div [ngClass]="'timeline-title-button selectable'" (click)="moveToStart()">START</div>
+      <div [ngClass]="'timeline-title-button selectable'" (click)="moveToEnd()">END</div>
+    </div>
+  </div>
+  <div [ngClass]="'timeline'">
+    <div [ngClass]="'timeline-container'" id="timeline-container">
+    </div>
+  </div>
+</div>
+
+

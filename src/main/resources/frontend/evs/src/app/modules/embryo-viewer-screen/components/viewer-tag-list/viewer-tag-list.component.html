@@ -1,0 +1,52 @@
+<div [ngClass]="'container-tag-list'">
+
+  <div [ngClass]="'tag-list-title'">
+  TAGS
+  </div>
+  <div [ngClass]="'tag-list'">
+    <div [ngClass]="'tag selectable'" *ngFor="let baseTag of baseTags; let i = index" (click)="selectTag(baseTag)">
+        <span *ngIf="baseTag.acronym !== 'IMG-A' &&
+                     baseTag.acronym !== 'IMG-L' &&
+                     baseTag.acronym !== 'IMG-C' &&
+                     baseTag.acronym !== 'IMG-T'">
+          {{baseTag.acronym}}
+        </span>
+
+        <span [ngClass]="'tag-image-container'" *ngIf="baseTag.acronym === 'IMG-A'">
+          <img [ngClass]="'tag-image'" alt="'draw arrow'" [src]="'./assets/arrow_tag_icon.svg'">
+        </span>
+
+        <span [ngClass]="'tag-image-container'" *ngIf="baseTag.acronym === 'IMG-L'">
+          <img [ngClass]="'tag-image'" alt="'draw line'" [src]="'./assets/line_tag_icon.svg'">
+        </span>
+
+        <span [ngClass]="'tag-image-container'" *ngIf="baseTag.acronym === 'IMG-C'">
+          <img [ngClass]="'tag-image'" alt="'draw circle'" [src]="'./assets/circle_tag_icon.svg'">
+        </span>
+
+        <span [ngClass]="'tag-image-container'" *ngIf="baseTag.acronym === 'IMG-T'">
+          <img [ngClass]="'tag-image'" alt="'write text'" [src]="'./assets/text_tag_icon.svg'">
+        </span>
+      <div [ngClass]="'tooltip-text'">
+        <p>TAG: {{baseTag.name}}</p>
+        <p>Description: {{baseTag.description}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showModal === true" [ngClass]="'modal_window_container'">
+
+  <div [ngClass]="'modal_window_title'">Select morphological event type and value</div>
+
+  <div [ngClass]="'modal_window_list'">
+    <div *ngFor="let event of selectedTag.morphologicalEvents" [ngClass]="'model_window_element'">
+      <div [ngClass]="'modal_window_element_name'">
+        {{event.name}}
+      </div>
+      <div *ngFor="let value of event.options" [ngClass]="'modal_window_element_value_list'">
+        <div (click)="selectMorphologicalEvent(event.id, value)" [ngClass]="'modal_window_element_value'">{{value}}</div>
+      </div>
+    </div>
+  </div>
+</div>

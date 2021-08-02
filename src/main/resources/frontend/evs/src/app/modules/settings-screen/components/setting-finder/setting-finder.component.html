@@ -1,0 +1,3 @@
+<div [ngClass]="'setting-finder-container'">
+  <input [ngClass]="'setting-finder-input selectable'" name="searchInput" type="text" placeholder="Type to search" [ngModel]="searchValue" (ngModelChange)="findPatient($event)">
+</div>

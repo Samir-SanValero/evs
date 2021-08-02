@@ -1,0 +1,14 @@
+<app-header></app-header>
+
+<div [ngClass]="'patient-screen-container'">
+  <div [ngClass]="'upper-bar'">
+      <app-patient-finder></app-patient-finder>
+    <!-- TODO HELP BUTTON -->
+  </div>
+
+  <div [ngClass]="'middle-container'">
+    <app-patient-list [ngClass]="'middle-container-list'"></app-patient-list>
+    <app-patient-data [ngClass]="'middle-container-data'"></app-patient-data>
+    <app-embryo-selector [ngClass]="'middle-container-selector'" [title]="'EMBRYOS'" (embryoSelected)="selectEmbryo($event)"></app-embryo-selector>
+  </div>
+</div>

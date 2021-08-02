@@ -1,0 +1,147 @@
+/* MAIN MENU STYLES */
+
+.primary_color {
+  color: antiquewhite;
+}
+
+.secondary_color {
+  color: deepskyblue;
+}
+
+.tertiary_color {
+  color: #535353;
+}
+
+html {
+  background-color: #535353;
+}
+
+.main_menu_header_container {
+  display: flex;
+  flex-direction: row;
+  height: 11vh;
+  border: solid 1px #cccacc;
+  width: 40vw;
+  margin: 5px;
+  cursor: default;
+}
+
+.main_menu_primary_title {
+  font-size: 50px;
+  font-weight: bolder;
+}
+
+.main_menu_secondary_title {
+  font-size: 10px;
+  color: #cccacc;
+  font-weight: bold;
+}
+
+.main_menu_inner_header_container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}
+
+
+.container_main_menu_buttons {
+  height: 75vh;
+  background-color: #535353;
+}
+
+.container_main_menu_inner_buttons{
+  height: 75vh;
+  width: auto;
+  padding-left: 20vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main_menu_button {
+  height: 18vh;
+  width: 12vw;
+  padding-top: 10vh;
+  border: none;
+  margin: 2vh 5vw;
+  font-size: 25px;
+  color: antiquewhite;
+  flex-basis: 33.333333%;
+  background-color: #404040;
+}
+
+.main_menu_button:hover {
+  background-color: #37afd4;
+}
+
+.main_menu_button_disabled {
+  height: 18vh;
+  width: 12vw;
+  padding-top: 10vh;
+  border: none;
+  margin: 2vh 5vw;
+  font-size: 25px;
+  color: antiquewhite;
+  flex-basis: 33.333333%;
+  background-color: #404040;
+  opacity: 50%;
+  pointer-events: none;
+}
+
+.main_menu_footer_container {
+  margin: 5px;
+  padding: 10px;
+  height: 10vh;
+}
+
+.main_menu_footer_inner_container{
+  height: 100%;
+  width: 100%;
+  background:url("../../../assets/fenomatch_logo_300.png") no-repeat center;
+  background-size: 10%;
+}
+
+.main_menu_button_patients {
+  background: #3e3e3e url("../../../assets/menu_patients_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_embryo_viewer {
+  background: #3e3e3e url("../../../assets/menu_embryo_viewer_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_embryo_selection {
+  background: #3e3e3e url("../../../assets/menu_embryo_selection_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_reports {
+  background: #3e3e3e url("../../../assets/menu_reports_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_video {
+  background: #3e3e3e url("../../../assets/menu_video_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_notifications {
+  background: #3e3e3e url("../../../assets/menu_notifications_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_alerts {
+  background: #3e3e3e url("../../../assets/menu_alerts_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_settings {
+  background: #3e3e3e url("../../../assets/menu_settings_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}
+
+.main_menu_button_support {
+  background: #3e3e3e url("../../../assets/menu_support_icon.png") no-repeat center 2vh;
+  background-size: 45%;
+}

@@ -1,0 +1,69 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.setting-list-container {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  border: solid #cccacc 1px;
+}
+
+.setting-list-title {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+
+  font-weight: bold;
+}
+
+.setting-list {
+  width: 100%;
+  height: 95%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+
+  overflow-y: auto;
+}
+
+.setting-list-option {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+
+  cursor: pointer;
+  background-color: #404040;
+}
+
+.setting-list-option-disabled {
+  width: 100%;
+  height: 5%;
+
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+
+  cursor: pointer;
+  background-color: #404040;
+  opacity: 50%;
+}
+

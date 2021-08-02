@@ -1,0 +1,26 @@
+.ai-ana {
+    display:inline-block;
+    height:50px;
+    width:17%;
+    margin: 5px 5px 5px 5px;
+    padding: 7px 5px 5px 5px;
+    border:1px solid #cdcbcd;
+}
+
+.button-ia-ana {
+    height: 30px;
+    padding:2px 2px 2px 2px;
+    width:200px;
+    border:1px solid #cdcbcd;
+    background-color: #404040;
+	color: #cccacc;
+}
+
+.selectable {
+  border: solid #404040 2px;
+  cursor: pointer;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}

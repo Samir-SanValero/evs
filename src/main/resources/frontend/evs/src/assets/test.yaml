@@ -1,0 +1,158 @@
+---
+title: "Fenomatch Dashboard"
+subtitle: "Welcome to"
+icon: "fas fa-space-shuttle"
+
+header: true
+footer: '<p>www.fenomatch.com</p>'
+
+columns: "5" # "auto" or number (must be a factor of 12: 1, 2, 3, 4, 6, 12)
+connectivityCheck: true # whether you want to display a message when the apps are not accessible anymore (VPN disconnected for example)
+
+# Optional theming
+theme: default # 'default' or one of the themes available in 'src/assets/themes'.
+
+# Optional custom stylesheet
+# Will load custom CSS files. Especially useful for custom icon sets.
+# stylesheet:
+#   - "assets/custom.css"
+
+# Here is the exhaustive list of customization parameters
+# However all value are optional and will fallback to default if not set.
+# if you want to change only some of the colors, feel free to remove all unused key.
+colors:
+  light:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#424242"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link-hover: "#363636"
+    background-image: "assets/your/light/bg.png"
+  dark:
+    highlight-primary: "#3367d6"
+    highlight-secondary: "#4285f4"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link-hover: "#ffdd57"
+    background-image: "assets/your/dark/bg.png"
+
+# Optional message
+message:
+  # url: "https://<my-api-endpoint>" # Can fetch information from an endpoint to override value below.
+  # mapping: # allows to map fields from the remote format to the one expected by Homer
+  #   title: 'id' # use value from field 'id' as title
+  #   content: 'value' # value from field 'value' as content
+  # refreshInterval: 10000 # Optional: time interval to refresh message
+  #
+  # Real example using chucknorris.io for showing Chuck Norris facts as messages:
+  # url: https://api.chucknorris.io/jokes/random
+  # mapping:
+  #   title: 'id'
+  #   content: 'value'
+  # refreshInterval: 10000
+#  style: "is-warning"
+#  title: "Optional message!"
+#  icon: "fa fa-exclamation-triangle"
+#  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+
+# Optional navbar
+# links: [] # Allows for navbar (dark mode, layout, and search) without any links
+links:
+  #- name: "Jenkins"
+  #  icon: "fab fa-github"
+  #  url: "http://github.com/bastienwirtz/homer"
+  #  target: "_blank" # optional html tag target attribute
+#  - name: "link 2"
+#    icon: "fas fa-book"
+#    url: "https://github.com/bastienwirtz/homer"
+  # this will link to a second homer page that will load config from page2.yml and keep default config values as in config.yml file
+  # see url field and assets/page.yml used in this example:
+#  - name: "Second Page"
+#    icon: "fas fa-file-alt"
+#    url: "#page2"
+
+services:
+  - name: "Development"
+    icon: "fas fa-code-branch"
+    # A path to an image can also be provided. Note that icon take precedence if both icon and logo are set.
+    # logo: "path/to/logo"
+    items:
+      - name: "WIKI - Bookstack"
+        icon: "fas fa-book"
+        url: "http://192.168.2.101:9000"
+        target: "_blank"
+      - name: "CI/CD - JIRA"
+        icon: "fab fa-jira"
+        url: "https://fenomatch.atlassian.net"
+        target: "_blank"
+      - name: "DOCKER - Portainer"
+        icon: "fas fa-boxes"
+        url: "http://192.168.2.101:9000"
+        target: "_blank"
+      - name: "DNS - Pihole"
+        icon: "fab fa-raspberry-pi"
+        url: "http://192.168.2.101:8888/admin/"
+        target: "_blank"
+
+  - name: "Validation"
+    icon: "fas fa-check-circle"
+    items:
+      - name: "CI/CD - Jenkins"
+        icon: "fab fa-jenkins"
+        url: "http://192.168.2.101:9090"
+        target: "_blank"
+      - name: "SCANNER - Sonarqube"
+        icon: "fas fa-bug"
+        url: "http://192.168.2.101:9101"
+        target: "_blank"
+      - name: "SCANNER - Nessus"
+        icon: "fas fa-shield-virus"
+        url: "https://192.168.2.101:8834"
+        target: "_blank"
+
+  - name: "Deployment - DEV"
+    icon: "fab fa-dev"
+    items:
+      - name: "MPI"
+        url: ""
+        target: "_blank"
+      - name: "FULLDATA"
+        url: "http://dl243.dinaserver.com:81/hosting/fulldata/web/login.php"
+        target: "_blank"
+      - name: "EVS - DEV"
+        url: ""
+        target: "_blank"
+      - name: "FENOMATCH WEB"
+        url: ""
+        target: "_blank"
+      - name: "FENOMATCH APP"
+        url: "http://dl318.dinaserver.com/hosting/test/fenomatch/aplicacion/login.php"
+        target: "_blank"
+
+  - name: "Deployment - PROD"
+    icon: "fas fa-dna"
+    items:
+      - name: "MPI"
+        url: ""
+        target: "_blank"
+      - name: "FULLDATA"
+        url: "http://fd.fenomatch.com/login.php"
+        target: "_blank"
+      - name: "FENOMATCH WEB"
+        url: "https://fenomatch.com/"
+        target: "_blank"
+      - name: "FENOMATCH APP"
+        url: "https://app.fenomatch.com/login.php"
+        target: "_blank"

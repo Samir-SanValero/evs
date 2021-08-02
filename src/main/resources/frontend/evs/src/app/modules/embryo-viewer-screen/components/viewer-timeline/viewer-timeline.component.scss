@@ -1,0 +1,129 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.container-timeline {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  border: solid #cccacc 1px;
+}
+
+.timeline-title {
+  width: 10%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: #cccacc;
+  font-weight: bold;
+  border: solid 1px #cccacc;
+}
+
+.timeline-title-text {
+  width: 100%;
+  height: 80%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-title-buttons {
+  width: 100%;
+  height: 20%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 2px;
+}
+
+.timeline-title-button {
+  width: 40%;
+  height: 90%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: normal;
+  background-color: #404040;
+}
+
+.timeline {
+  width: 90%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline-container {
+  height: 100%;
+  width: 100%;
+}
+
+::ng-deep {
+  .vis-timeline {
+    border: none !important;
+  }
+
+  .vis-time-axis .vis-text {
+    color: #ffffff;
+  }
+
+  .vis-item-content {
+    border: 0;
+    color: #ffffff;
+    line-height: 100%;
+    background-color: #404040;
+    text-align: center;
+  }
+
+  .vis-panel {
+    border: 0;
+    color: #ffffff;
+  }
+
+  //.vis-background .vis-item-content {
+  //  border: 1px solid #00bfff;
+  //}
+
+  .vis-panel.vis-background.vis-vertical {
+    height: 600px;
+  }
+
+  .vis-text {
+    color: #ffffff;
+  }
+
+  .vis-item.pointer {
+    color: #00bfff;
+    background-color: #404040;
+    border-color: #ffffff;
+    border-radius: 50%;
+  }
+
+  .vis-item.tag {
+    background-color: #404040;
+  }
+
+}
+

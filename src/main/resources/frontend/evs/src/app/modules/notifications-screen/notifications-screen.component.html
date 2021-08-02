@@ -1,0 +1,201 @@
+<app-header #header></app-header>
+
+<div [ngClass]="['main-cntr', 'flex']">
+	    <div [ngClass]="['col1', 'flex']">
+            <form f="ngForm" [formGroup]="notificationForm" (ngSubmit)="onSubmit($event)">
+            <input type="hidden" name="notId" formControlName="notId" value="-1">
+		        <h6>CREATE REMINDER</h6>
+		        <div [ngClass]="['sub-pnl','flex']">
+		            <h6>INFORMATION</h6>
+		            <div [ngClass]="['flex','']">
+
+		                <div [ngClass]="['flex-row','']">
+		                    <div [ngClass]="['inline','']">
+		                        <label>Name</label>
+		                    </div>
+		                    <div [ngClass]="['inline','']" style="float:right; width:60%;">
+                                    <div *ngIf="notificationFormSubmited && name.errors != null && name.errors.required">
+					                   <p [ngClass]="['vld-err', 'err-mss', '']">Name is required.</p>
+					                </div>
+		                        <input type="text" name="name" [ngClass]="['spcl-input']" formControlName="name">
+		                    </div>
+		                </div>
+
+		                <div [ngClass]="['flex-row','']">
+		                    <div [ngClass]="['inline','']">
+		                        <label>Incubation chamber</label>
+		                    </div>
+		                    <div [ngClass]="['inline','']" style="float:right; width:60%;">
+		                            <div *ngIf="notificationFormSubmited && inc_chamber.errors != null && inc_chamber.errors.required">
+                                       <p [ngClass]="['vld-err', 'err-mss', '']">Incubator is required.</p>
+                                    </div>
+                                    <div *ngIf="notificationFormSubmited && inc_chamber.errors != null && inc_chamber.errors.pattern">
+                                       <p [ngClass]="['vld-err', 'err-mss', '']">Incubator is not an integer</p>
+                                    </div>
+		                        <input type="text" name="inc_chamber" formControlName="inc_chamber">
+		                    </div>
+		                </div>
+		                <div [ngClass]="['flex-row','']">
+		                    <p>Comment</p>
+		                </div>
+		                <div [ngClass]="['flex-row','']">
+		                    <div [ngClass]="['','']">
+		                          <div *ngIf="notificationFormSubmited && comment.errors != null && comment.errors.required">
+                                       <p [ngClass]="['vld-err', 'err-mss', '']">Comment is required.</p>
+                                   </div>
+		                        <textarea type="text" name="comment" [ngClass]="['spcl-txt-area', '']" maxlength="250" rows="4" formControlName="comment"></textarea>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div [ngClass]="['sub-pnl','flex']">
+		            <h6>EMBRYO NOTIFICATIONS</h6>
+<!-- 		            <img src="assets/selector.png" alt="embryoselector" style="width:177px; height:139px; margin-left:auto; margin-right:auto;"/> -->
+						<div [ngClass]="['flex']" style="width:auto; margin-left:auto; margin-right:auto;">
+						<app-embryo-selector #EmbryoSelector
+						(embryoSelected)="selectEmbryo($event)" 
+						[title]="'Embryo Selector'"
+						></app-embryo-selector>
+						</div>
+		        </div>
+
+		        <div [ngClass]="['sub-pnl','main-cntr']">
+		            <h6></h6>
+		            <div *ngIf="notificationFormSubmited && datetime.errors != null && datetime.errors.required" style="text-align:right;">
+                       <p [ngClass]="['vld-err', 'err-mss', '']">Date is required.</p><br>
+                    </div>
+		            <div [ngClass]="['flex','flex-row']">
+		                <div [ngClass]="['width-30','']">
+		                    <p>Set Date / Time</p>
+		                </div>
+		                <div [ngClass]="['rmdr-date-picker','']">
+							<mat-form-field>
+							   <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" formControlName="datetime" readonly>
+							   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+							   <ngx-mat-datetime-picker #picker [showSpinners]="true" [showSeconds]="false"
+							      [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+							      [touchUi]="false"  [enableMeridian]="true"
+							      [disableMinute]="false" [hideTime]="false">
+							   </ngx-mat-datetime-picker>
+							</mat-form-field>
+		                </div>
+		            </div>
+
+		            <div [ngClass]="['flex','flex-row']" #daysDiv>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_mon" (click)="selectDay('d_mon')">
+		                    <p>MON</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_tue" (click)="selectDay('d_tue')">
+		                    <p>TUE</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_wed" (click)="selectDay('d_wed')">
+		                    <p>WED</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_thu" (click)="selectDay('d_thu')">
+		                    <p>THU</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_fri" (click)="selectDay('d_fri')">
+		                    <p>FRI</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_sat" (click)="selectDay('d_sat')">
+		                    <p>SAT</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-day','flex']" id="d_sun" (click)="selectDay('d_sun')">
+		                    <p>SUN</p>
+		                </div>
+		            </div>
+
+		            <div [ngClass]="['flex','flex-row']" #frequencyDiv>
+		                <div [ngClass]="['inf-cll-period','flex']" id="p_day" (click)="selectPeriod('p_day')">
+		                    <p>EVERY DAY</p>
+		                </div>
+		                <div [ngClass]="['inf-cll-period','flex']" id="p_week" (click)="selectPeriod('p_week')">
+		                    <p>EVERY WEEK</p>
+		                </div>
+		                <div #monthly [ngClass]="['inf-cll-period','flex']" id="p_month" (click)="selectPeriod('p_month')">
+		                    <p>EVERY MONTH</p>
+		                </div>
+		                <div style="display:none" [ngClass]="['inf-cll-period','flex']" id="monthlyDay" #monthlyDay>
+                            <input [ngClass]="['npt-mnth-day']" type="number" min="1" max="31" name="monthlyDay" placeholder="Day of the month" (blur)="validateMonthDay(monthlyDay.children[0].value)" (keyup.enter)="validateMonthDay(monthlyDay.children[0].value)" >
+		                </div>
+		            </div>
+		        </div>
+
+		        <div [ngClass]="['col1-1', 'flex']">
+		            <div [ngClass]="['flex','width-30']">
+		                <button [ngClass]="['sav-butt','width-60']">SAVE</button>
+		            </div>
+		            <div [ngClass]="['flex','width-15']">
+		                <button [ngClass]="['cncl-button','']" (click)="clearNotificationForm($event)">Clear</button>
+		            </div>
+		        </div>
+
+		    </form>
+	    </div>
+	    <div [ngClass]="['col2', 'flex']">
+	        <h6>CURRENT NOTIFICATION</h6>
+	        <div [ngClass]="['height-90', 'overflow-y']">
+	        <div [ngClass]="['flex', 'width-97']" #notificationContainer>
+		        <div [ngClass]="['sub-pnl-brdr','flex']" *ngFor="let not of notificationList; let i = index;">
+		            <div [ngClass]="['flex', 'flex-row']">
+		                <div [ngClass]="['width-20']">
+		                    <p>{{not.dateReminder | date: 'dd/MM/yyyy hh:mm'}}</p>
+		                </div>
+		                <div [ngClass]="['width-20']">
+		                    <p><b>CHAMBER {{not.chamber}}</b></p>
+		                </div>
+		                <div>
+		                    <p><b>{{not.name}}</b></p>
+		                </div>
+		                <div [ngClass]="['sld-on-off']">
+		                    <mat-slide-toggle [(ngModel)]="not.active" (change)="activateOrDeactivate(not.id)" id="not_{{not.id}}"></mat-slide-toggle>
+		                </div>
+		            </div>
+		            <div [ngClass]="['flex', 'flex-row']">
+		                <div [ngClass]="['width-20']">
+		                    <p><b>Comment</b></p>
+		                </div>
+		                <div>
+		                    <p>{{not.comment}}</p>
+		                </div>
+		            </div>
+
+		            <div [ngClass]="['flex', 'flex-row']">
+			            <div [ngClass]="['col1-1', 'flex']" >
+			               <p><b>Embryos</b></p>
+			               <div [ngClass]="['dot', '']" *ngFor="let embryo of not.embryos" style="display:inline; background-color: {{embryo.status.color}};">{{embryo.externalId}}</div>
+			            </div>
+		            </div>
+
+		            <div [ngClass]="['flex', 'flex-row']">
+			            <div [ngClass]="['flex','width-25']">
+			                <button [ngClass]="['sav-butt','width-60']" (click)="startNotificationEdition($event, i)">EDIT</button>
+			            </div>
+			            <div [ngClass]="['flex','width-70']">
+			                <button [ngClass]="['sav-butt','width-60', 'btn-right']" class="btn btn-outline-secondary" mwlConfirmationPopover [popoverTitle]="popoverTitle" [popoverMessage]="popoverMessage"
+			                placement="left" (confirm)="deleteNotification(not.id)" (cancel)="cancelClicked = true">DELETE</button>
+<!-- 		                    <button [ngClass]="['sav-butt','width-60', 'btn-right']" (click)="deleteNotification(not.id)">DELETE</button> -->
+		                </div>
+		            </div>
+
+		        </div>
+		    </div>
+	        </div>
+	    </div>
+
+	    <div [ngClass]="['col3', 'flex', '']">
+            <h6>LATEST NOTIFICATIONS</h6>
+            <div [ngClass]="['sub-pnl-alrts','flex', 'height-95', 'overflow-y']" *ngIf="notificationList && alertsToShow">
+                <div [ngClass]="['flex','flex-row', 'alrt-row']" *ngFor="let alert of alertsToShow let i = index;">
+                 <div style="width:25%;">
+                    <p>{{alert.triggerDate | date: 'dd/MM/yyyy hh:mm'}}</p>
+                 </div>
+                 <div style="width:68%;">
+                     <b>{{getWellForAlert(alert.notificationId)}}</b><br>
+                     <p>{{getCommentForAlert(alert.notificationId)}}</p>
+                 </div>
+                 </div>
+               </div>
+
+	    </div>
+</div>

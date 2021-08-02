@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<div [ngClass]="'embryo-viewer-container'">
+
+  <div [ngClass]="'upper-bar'">
+    <div [ngClass]="'upper-bar-status-chooser'">
+      <div [ngClass]="'moveSatusColorsRight'">
+        <app-status-chooser></app-status-chooser>
+      </div>
+    </div>
+    <!-- TODO VIDEO CONTROLS -->
+<!--    <div [ngClass]="'upper-bar-play-control'">-->
+<!--      <app-play-control></app-play-control>-->
+<!--    </div>-->
+    <!-- TODO ZOOM CONTROLS -->
+<!--    <div [ngClass]="'upper-bar-zoom-control'">-->
+<!--      <app-zoom-control></app-zoom-control>-->
+<!--    </div>-->
+    <!-- TODO 3D FOCUSING BUTTON -->
+    <!-- TODO ENABLE NOTIFICATIONS -->
+    <!-- TODO HELP BUTTON -->
+  </div>
+
+  <div [ngClass]="'embryo-viewer'">
+
+    <div [ngClass]="'embryo-viewer-second-column'">
+      <app-viewer-vertical-slider [ngClass]="'second-column-vertical-slider'"></app-viewer-vertical-slider>
+    </div>
+
+    <div [ngClass]="'embryo-viewer-third-column'">
+      <app-viewer-timeline [ngClass]="'third-column-timeline'" *ngIf="!showModal"></app-viewer-timeline>
+      <app-viewer-main [ngClass]="'third-column-main'" (showModalEvent)=receiveShowModal($event)></app-viewer-main>
+    </div>
+
+    <div [ngClass]="'embryo-viewer-first-column'">
+      <app-embryo-selector [ngClass]="'first-column-selector'" [title]="'EMBRYOS'"></app-embryo-selector>
+      <app-viewer-tag-list [ngClass]="'first-column-tag-list'"></app-viewer-tag-list>
+<!--      <app-viewer-model-list [ngClass]="'first-column-model-list'"></app-viewer-model-list>-->
+      <app-viewer-phase-list [ngClass]="'first-column-phase-list'"></app-viewer-phase-list>
+    </div>
+  </div>
+
+</div>

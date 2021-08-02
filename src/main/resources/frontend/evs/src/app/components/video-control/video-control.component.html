@@ -1,0 +1,21 @@
+	<div id="videoControlContainer" class="white_border margin5">
+	    <div id="playMenu" class="playMenu margin5 padding5">
+	        <button #videoPreviousFrame class="button" (click)="previousFrame()">&lt;&lt;</button>
+	        <button #videoPlayStop (click)="play()">&#x23F5;</button>
+	        <button #videoNextFrame (click)="nextFrame()">&gt;&gt;</button>
+	        <div style="display:inline;" class="custom-slider-fps">
+	            Play speed (FPS)
+	            <ng5-slider style="width:40%; margin:0px 0px 0px 0px;" [(value)]="frameRate" [options]="sliderFrameRateOptions" (userChange)="sliderFrameRateMove($event)"></ng5-slider>
+	        </div>
+	    </div>
+	</div>
+	<div id="videoZoomContainer" class="white_border margin5">
+	<!--     <div id="zoomMenu" class="zoomMenu margin5 padding5"> -->
+	<!--         <span>Zoom level: <input type="text" name="manualZoom" value="{{roundNumberToInteger(zoom * 100)}}" style="width:70px; height:25px; font-size:12px;" -->
+	<!--             (change)="changeManuallyZoom($event)">% </span> -->
+	<!--       <span>Zoom level: {{ roundNumberToInteger(zoom * 100) }}%</span> -->
+	<!--         <button (click)="lessZoom()" (mousedown)="activatePressingZoomNegative()" (mouseup)="deActivatePressingZoomNegative()" (mouseleave)="deActivatePressingZoomNegative()" (mouseout)="deActivatePressingZoomNegative()">-</button> -->
+	<!--         <button (click)="resetZoom()">FIT</button> -->
+	<!--         <button (click)="moreZoom()" (mousedown)="activatePressingZoomPositive()" (mouseup)="deActivatePressingZoomPositive()" (mouseleave)="deActivatePressingZoomPositive()" (mouseout)="deActivatePressingZoomPositive()">+</button> -->
+	<!--     </div> -->
+	</div>

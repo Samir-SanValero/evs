@@ -1,0 +1,28 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.setting-finder-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+  margin-left: 5px;
+
+  border: solid #cccacc 1px;
+}
+
+.setting-finder-input {
+  width: 100%;
+
+  padding: 10px;
+
+  background-color: #404040;
+  color: #cccacc;
+}

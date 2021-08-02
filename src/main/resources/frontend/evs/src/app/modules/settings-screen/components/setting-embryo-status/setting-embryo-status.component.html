@@ -1,0 +1,52 @@
+<div [ngClass]="'setting-data'">
+  <div [ngClass]="'setting-right-pane'">
+
+    <div [ngClass]="'setting-list'">
+      <div [ngClass]="'setting-list-item selectable'" *ngFor="let status of statuses" (click)="selectStatus(status)">
+        <div [ngClass]="'setting-list-item-color'" [ngStyle]="{'background-color': status.color}"></div>
+        <div>{{status.description}}</div>
+      </div>
+    </div>
+
+    <div [ngClass]="'setting-buttons'">
+      <button [ngClass]="'setting-button-remove selectable'" (click)="removeStatus()">
+        <mat-icon>remove</mat-icon>
+      </button>
+      <button [ngClass]="'setting-button-add selectable'" (click)="addStatus()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+  </div>
+
+  <div [ngClass]="'setting-left-pane'" *ngIf="editingStatus !== undefined">
+
+    <div [ngClass]="'setting-list'">
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Name</label>
+        </div>
+        <input [ngClass]="'pane-item-input-value selectable'" type="text" [(ngModel)]="editingStatus.name" [value]="editingStatus.name">
+      </div>
+
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Description</label>
+        </div>
+        <input [ngClass]="'pane-item-input-value selectable'" type="text" [(ngModel)]="editingStatus.description" [value]="editingStatus.description">
+      </div>
+
+      <div [ngClass]="'pane-item-input'">
+        <div [ngClass]="'pane-item-input-label'">
+          <label>Color (HTML value, example: #ffffff)</label>
+        </div>
+        <input [ngClass]="'pane-item-input-value selectable'" type="text" [(ngModel)]="editingStatus.color" [value]="editingStatus.color">
+      </div>
+    </div>
+
+    <div [ngClass]="'setting-buttons'">
+      <button [ngClass]="'setting-button-save selectable'" (click)="saveStatus()"></button>
+    </div>
+
+  </div>
+</div>

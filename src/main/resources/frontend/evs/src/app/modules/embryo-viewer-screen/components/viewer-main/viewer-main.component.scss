@@ -1,0 +1,241 @@
+.selectable {
+  border: solid #404040 2px;
+}
+
+.selectable:hover {
+  border: solid #cccacc 2px;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.container-main {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+
+  border: solid #cccacc 1px;
+}
+
+.main-embryo-icon {
+  min-height: 50px;
+  height: 20%;
+  width: 5%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.embryo-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+  border: solid #404040 2px;
+  color: #000000;
+  font-size: 12px;
+}
+
+.main-image-container {
+  height: 100%;
+  width: 70%;
+  position: relative;
+
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-outer {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-inner {
+  border: solid 10px #ffffff;
+}
+::ng-deep {
+  .canvas-container {
+    position: absolute !important;
+  }
+}
+
+.canvas {
+  position: absolute;
+  //z-index: 10;
+  height: 500px;
+  width: 500px;
+  //display: flex;
+  //flex-direction: column;
+
+  //border: solid #117a8b 2px;
+}
+
+.main-list-events {
+  height: 100%;
+  width: 25%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.list-events-title {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+  font-weight: bold;
+  font-size: 14px;
+  color: #cccacc;
+}
+
+.list-events {
+  height: 90%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.event {
+  height: 10%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.event-value {
+  width: auto;
+  height: 35px;
+  min-width: 50px;
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  padding: 5px;
+
+  background-color: #404040;
+  color: #cccacc;
+  font-size: 13px;
+}
+
+.event-value-border {
+  border: solid #97b0f8 2px;
+}
+
+.event-value-image-container {
+  width: auto;
+  height: 35px;
+  min-width: 50px;
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+  padding: 5px;
+
+
+  background-color: #404040;
+  color: #cccacc;
+  font-size: 13px;
+}
+
+.event-value-image {
+  width: 60%;
+  height: auto;
+}
+
+.event-item {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.event .tooltip-text {
+  visibility: hidden;
+  width: 35%;
+  margin-left: -60.5%;
+  left: 87%;
+  top: 5%;
+  background-color: #404040;
+  border: solid #404040 2px;
+  color: #cccacc;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  justify-content: center;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 100;
+}
+
+.event-value.selectable:hover .tooltip-text {
+  visibility: visible;
+}
+
+.modal-dialog {
+  max-width: 90%;
+  height: 90%;
+  border: solid 1px #cccacc;
+}
+
+.modalImageEnbryo {
+  background-color: #535353;
+  height: 100%;
+}
+
+.modal-title {
+  color: #cccacc;
+  text-align: center;
+}
+
+.imageModalEmbryo {
+  height: 100%;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+}
+
+.third-column-timeline {
+  height: 20%;
+  width: 100%;
+}
+
+.embryo-viewer-third-column {
+  width: 82%;
+  height: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

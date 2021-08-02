@@ -1,0 +1,126 @@
+<div [ngClass]="'patient-data-container'">
+  <div [ngClass]="'patient-data-first-column'">
+    <div [ngClass]="'patient-data-title'">
+      PATIENT DATA
+    </div>
+
+    <div [ngClass]="'patient-data-data'">
+      <div [ngClass]="'patient-data-data-first-column'">
+        <div [ngClass]="'patient-data-internal-info'">
+          <div [ngClass]="'patient-data-inline-field'">
+            <div [ngClass]="'patient-data-inline-field-id'">
+              <label>Dish</label>
+            </div>
+            <div [ngClass]="'patient-data-inline-field-value-disabled'" type="text">{{selectedPatient.patientData.dish}}</div>
+          </div>
+          <div [ngClass]="'patient-data-inline-field'">
+            <div [ngClass]="'patient-data-inline-field-id'">
+              <label>ID</label>
+            </div>
+            <div [ngClass]="'patient-data-inline-field-value-disabled'" type="text">{{selectedPatient.patientData.id}}</div>
+          </div>
+          <div [ngClass]="'patient-data-inline-field'">
+            <div [ngClass]="'patient-data-inline-field-id'">
+              <label>Name</label>
+            </div>
+            <input [ngClass]="'patient-data-inline-field-value selectable blur2'" type="text" [(ngModel)]="selectedPatient.patientData.name" [value]="selectedPatient.patientData.name">
+          </div>
+        </div>
+
+        <div [ngClass]="'patient-data-media'">
+          <div [ngClass]="'patient-data-media-photo-container'" *ngIf="selectedPatient.patientData.photo !== undefined">
+            <img [ngClass]="'patient-data-media-photo blur16'"
+                 alt="{{selectedPatient.patientData.name}}"
+                 [src]="'data:image/jpg;base64,'+ selectedPatient.patientData.photo">
+          </div>
+          <div [ngClass]="'patient-data-media-photo-container-no-image'" *ngIf="selectedPatient.patientData.photo === undefined">
+          </div>
+
+          <div [ngClass]="'patient-data-photo-picker selectable'" (click)="hiddenPhotoPicker.click()" >
+            <input style="display: none" type="file" (change)="uploadPatientImage($event)" #hiddenPhotoPicker>
+            <div [ngClass]="'photo-picker-icon-container'"></div>
+            <div [ngClass]="'photo-picker-icon-field'">File...</div>
+          </div>
+        </div>
+      </div>
+      <div [ngClass]="'patient-data-data-second-column'">
+        <div [ngClass]="'patient-data-comment'">
+          <div [ngClass]="'patient-data-inside-title'">Comment</div>
+          <textarea [ngClass]="'patient-data-comment-text selectable'" [(ngModel)]="selectedPatient.patientData.comment" value="{{selectedPatient.patientData.comment}}"></textarea>
+        </div>
+
+
+        <div [ngClass]="'patient-data-comment'">
+          <div [ngClass]="'patient-data-inside-title'">Added information</div>
+          <textarea [ngClass]="'patient-data-info-text selectable'" [(ngModel)]="selectedPatient.patientData.addedInformation" value="{{selectedPatient.patientData.addedInformation}}"></textarea>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="'patient-data-second-column'">
+    <div [ngClass]="'patient-data-partner-data-container'">
+      <div [ngClass]="'patient-data-title'">
+        PARTNER DATA
+      </div>
+      <div [ngClass]="'patient-data-partner-data'">
+        <div [ngClass]="'patient-data-inline-field'">
+          <div [ngClass]="'patient-data-inline-field-id'">
+            <label>ID</label>
+          </div>
+          <div [ngClass]="'patient-data-inline-field-value-disabled'" type="text">{{selectedPatient.partnerData.id}}</div>
+        </div>
+        <div [ngClass]="'patient-data-inline-field'">
+          <div [ngClass]="'patient-data-inline-field-id'">
+            <label>Name</label>
+          </div>
+          <input [ngClass]="'patient-data-inline-field-value selectable blur2'" type="text" [value]="selectedPatient.partnerData.name">
+        </div>
+
+        <textarea [ngClass]="'partner-data-comment-text selectable'" [(ngModel)]="selectedPatient.partnerData.comment" value="{{selectedPatient.partnerData.comment}}"></textarea>
+      </div>
+    </div>
+
+    <div [ngClass]="'patient-data-insemination-data-container'">
+      <div [ngClass]="'patient-data-title'">
+        INSEMINATION DATA
+      </div>
+      <div [ngClass]="'patient-data-insemination-data'">
+        <div [ngClass]="'patient-data-inline-field'">
+          <div [ngClass]="'patient-data-inline-field-id'">
+            <label>Date</label>
+          </div>
+
+          <mat-form-field [ngClass]="'patient-data-inline-field-value-centered selectable'">
+            <input matInput [ngxMatDatetimePicker]="picker" placeholder="Choose a date" readonly>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker
+                                     [showSpinners]="true"
+                                     [showSeconds]="false"
+                                     [stepHour]="1"
+                                     [stepMinute]="1"
+                                     [stepSecond]="1"
+                                     [touchUi]="false"
+                                     [enableMeridian]="true"
+                                     [disableMinute]="false"
+                                     [hideTime]="false">
+            </ngx-mat-datetime-picker>
+          </mat-form-field>
+        </div>
+<!--        <div [ngClass]="'patient-data-inline-field'">-->
+<!--          <div [ngClass]="'patient-data-inline-field-id'">-->
+<!--            <label>Type</label>-->
+<!--          </div>-->
+<!--          <select [ngClass]="'select-css selectable'" [(ngModel)]="selectedInseminationType"-->
+<!--                  (ngModelChange)="changeInseminationType($event)" name="patientInseminationTypeSelect">-->
+<!--            <option *ngFor="let inseminationType of inseminationTypes" [ngValue]="inseminationType">-->
+<!--              {{inseminationType.name}}-->
+<!--            </option>-->
+<!--          </select>-->
+<!--        </div>-->
+
+      </div>
+    </div>
+  </div>
+</div>
